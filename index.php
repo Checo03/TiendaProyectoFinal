@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>Tienda Web</h1>
-    <p>holaaaaaaaaaaaaaaaaaaaaaa</p>
+    <p>Prueba Git</p>
 </body>
 </html>
