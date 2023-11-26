@@ -7,13 +7,33 @@
     <link rel="shortcut icon" href="Media/Img/Favicon/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link rel="stylesheet" href="Estilos/InicioEstilos.css">
+    <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>   
 </head>
 <body>
-    <header>
-
+    <header class="Cabecera-Header">
+        <div class="Container-Cabecera Nav-Container">
+            <img src="Media/Img/logo.png" alt="LOGO" style="width: 150px;  height: 150px;">
+            <nav class="Cabecera-Nav Cabecera-Contenido">
+                <ul>
+                     <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Conocenos</a></li>
+                    <li><a href="#">Acerca De</a></li>
+                </ul>
+            </nav>
+            <nav class="Cabecera-Nav Cabecera-Sesion">
+                <ul>
+                    <li><a href="#">Registrate</a></li>
+                    <li><a href="#">Inciar Sesion</a></li>
+                </ul>
+            </nav>
+            <a href="#"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></a>
+        </div>
     </header>
     <main>
+        <div class="Container-Inicio">
 
+        </div>
     </main>
     <footer>
 
