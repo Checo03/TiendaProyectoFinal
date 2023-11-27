@@ -27,12 +27,18 @@
                     <li><a href="#">Inciar Sesion</a></li>
                 </ul>
             </nav>
+            <div class="Cabecera-BarraBusqueda">
+                <form action="">
+                    <button><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+                    <input type="text" placeholder="¿Qué Esta Buscando?">
+                </form>
+            </div>
             <a href="#"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></a>
         </div>
     </header>
     <main>
         <div class="Container-Inicio">
-
+           
         </div>
     </main>
     <footer>
