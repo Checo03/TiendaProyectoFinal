@@ -15,7 +15,7 @@
     <main>
 
     </main>
-    <footer>
+    <center>
 <footer>
     <div class="footer-content">
         <div class="contact-info">
@@ -24,7 +24,6 @@
             <p><i class="fas fa-phone"></i> Teléfono: +449-584-4979</p>
             <p><i class="fas fa-envelope"></i> Correo Electrónico: revoltstudio@empresa.com</p>
         </div>
-    
         <div class="social-links">
             <h2>Síguenos en Redes Sociales</h2>
             <div class="icon-container">
@@ -53,4 +52,3 @@
 </center>
 </body>
 </html>
- 
