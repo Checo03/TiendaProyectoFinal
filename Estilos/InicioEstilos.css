@@ -1,6 +1,60 @@
-.Container-Inicio{
-    width: 90%;
-    max-width: 850px;
+body{
     margin: 0 auto;
 }
+
+.Container-Inicio{
+    position: relative;
+    margin: 0 auto;
+}
+
+body{
+    background-color: #eaeaea;
+}
+
+.Carrusel{
+    width: 1350px;
+    height: 498px;
+    overflow: hidden;
+}
+
+.Carrusel ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+}
+
+.Carrusel li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.Carrusel-Content{
+    position: absolute;
+    text-align: center;
+    padding: 0 250px;
+    top:250px;
+
+    color: white;
+}
+
+.Carrusel-Content h2{
+    font-size: 45px;
+    margin-bottom: 35px;
+}
+
+.Carrusel-Content button{
+    border: none;
+    color: white;
+    background-color: black;
+    width: 100px;
+    height: 50px;
+}
+
+.Carrusel img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 

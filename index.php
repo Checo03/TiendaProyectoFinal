@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Revolt Studio Sounds</title>
     <link rel="shortcut icon" href="Media/Img/Favicon/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link rel="stylesheet" href="Estilos/InicioEstilos.css">
-    <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>   
+
+    <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>  
+    
 </head>
 <body>
     <header class="Cabecera-Header">
@@ -37,12 +39,59 @@
         </div>
     </header>
     <main>
-        <div class="Container-Inicio">
-           
-        </div>
+        <section>
+            <div class="Carrusel">
+                <ul>
+                    <li class="Carrusel-Item">
+                        <img src="Media/Img/Carusel/img1.jpg">
+                        <div class="Carrusel-Content">
+                            <h2>Conecta con tu Música Desconecta del Mundo</h2>
+                            <p>Siente La Calidad En Cada Nota</p>
+                            <button>SEE MORE</button>
+                        </div>
+                    </li>
+                    <li class="Carrusel-Item">
+                        <img src="Media/Img/Carusel/img2.jpg">
+                        <div class="Carrusel-Content">
+                            <h2>Sintoniza tu Mundo</h2>
+                            <p>Siente La Calidad En Cada Nota</p>
+                            <button>SEE MORE</button>
+                        </div>    
+                    </li>
+                    <li class="Carrusel-Item">
+                        <img src="Media/Img/Carusel/img3.jpg">
+                        <div class="Carrusel-Content">
+                            <h2>Decibeles que Enamoran</h2>
+                            <p>Siente La Calidad En Cada Nota</p>
+                            <button>SEE MORE</button>
+                        </div>  
+                    </li>
+                    <li class="Carrusel-Item">
+                        <img src="Media/Img/Carusel/img4.jpg">
+                        <div class="Carrusel-Content">
+                            <h2>Despierta tus Sentido</h2>
+                            <p>Siente La Calidad En Cada Nota</p>
+                            <button>SEE MORE</button>
+                        </div>     
+                    </li>
+                    <li class="Carrusel-Item">
+                        <img src="Media/Img/Carusel/img5.jpg">
+                        <div class="Carrusel-Content">
+                            <h2>Vibra con tu Estilo</h2>
+                            <p>Siente La Calidad En Cada Nota</p>
+                            <button>SEE MORE</button>
+                        </div>  
+                    </li>
+                </ul>
+            </div>
+        </section>  
+        
+
     </main>
     <footer>
 
     </footer>
+
+    <script src="Scripts/Carrusel.js"></script>
 </body>
 </html>
