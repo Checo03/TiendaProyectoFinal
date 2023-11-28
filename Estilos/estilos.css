@@ -1,0 +1,74 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background-color: #0F0F0F;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-info,
+.social-links {
+    flex-basis: 45%;
+}
+
+.contact-info p,
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column; 
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-links a {
+    margin-right: 10px;
+}
+
+
+.social-links a i {
+    font-size: 1.7em; 
+}
+
+.separator {
+    color: #fff;
+    margin: 0 5px;
+}
+
+.copyright,
+.empresa2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+.empresa2 img {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+h2{
+    color:white;
+    font-weight: bold;
+}
+h1{
+    color: #fff;
+}
