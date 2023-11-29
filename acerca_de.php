@@ -36,7 +36,7 @@
         </div>
     </header>
 
-    <div class="content-container">
+    <div class="contenedor-estiloAD">
         <section>
             <h2><i class="fa-solid fa-headphones fa-bounce"></i> ¿QUIÉNES SOMOS?</h2>
             <br>
@@ -45,7 +45,7 @@
         </section>
     </div>
     <br><br><br><br><br><br>
-    <div class="content-container">
+    <div class="contenedor-estiloAD">
         <section>
             <h2><i class="fa-solid fa-headphones fa-bounce"></i> NUESTRO EQUIPO</h2>
             <br>
@@ -87,7 +87,7 @@
         </div>
     </div>
         <br><br><br><br><br>
-        <div class="content-container">
+        <div class="contenedor-estiloAD">
             <section>
                 <h2><i class="fa-solid fa-headphones fa-bounce"></i> VALORES DE LA EMPRESA</h2>
                 <br>
@@ -103,11 +103,11 @@
             <li><b>Sostenibilidad:</b> Compromiso con prácticas comerciales sociales y ambientalmente responsables, minimizando el impacto ambiental y contribuyendo positivamente a la comunidad.</li>
         </ol>
     <br><br><br><br>
-    <div style="border-radius: 50%; width: 50%;" class="content-container">
+    <div style="border-radius: 50%; width: 50%;" class="contenedor-estiloAD">
         <center><section>
             <h2>CONTÁCTANOS PARA MAYOR INFORMACIÓN</h2>
             <br>
-            <center><a href="#" class="button">CONTÁCTANOS </a> <i style="font-size: x-large;" class="fa-solid fa-arrow-pointer fa-beat"></i></center>
+            <center><a href="#" class="buttonAcercaD">CONTÁCTANOS </a> <i style="font-size: x-large;" class="fa-solid fa-arrow-pointer fa-beat"></i></center>
         </section></center>
     </div>
     <br><br><br><br>
