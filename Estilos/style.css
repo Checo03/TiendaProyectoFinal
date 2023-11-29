@@ -96,7 +96,7 @@ header, footer{
     width: 100%;
 }
 /*Estilos del carrusel*/
-.content-container {
+.contenedor-estiloAD {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@ header, footer{
     color: rgb(168, 168, 168);
 }
 
-.content-container:hover {
+.contenedor-estiloAD:hover {
     box-shadow: 8px 15px 23px rgba(0, 0, 0, 0.459);
     color: white;
 }
@@ -319,7 +319,7 @@ li {
     counter-increment: li-counter;
 }
 
-.button {
+.buttonAcercaD {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -334,7 +334,7 @@ li {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.button:hover {
+.buttonAcercaD:hover {
     background-color: white;
     color: rgb(0, 70, 35);
 }
