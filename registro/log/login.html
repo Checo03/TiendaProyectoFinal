@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+    
+    <form action="login.php" method="post">
+        <h2>Iniciar Sesión</h2>
+        <label for="cuenta_correo">Nombre de cuenta o Correo Electrónico:</label>
+        <input type="text" name="cuenta_correo" required><br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" required><br>
+
+        <label for="captcha">Captcha:</label>
+        <img src="captcha.php" alt="CAPTCHA">
+        <br>
+        <input type="text" name="captcha" required><br>
+
+        <label for="remember">Recordar sesión:</label>
+        <input type="checkbox" name="remember"><br>
+
+        <input type="submit" value="Iniciar Sesión">
+    </form>
+</body>
+</html>
