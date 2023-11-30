@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $respuesta_correcta = $_GET['respuesta'];
 
     echo "<h2>Pregunta de seguridad:</h2>";
-    echo "<p>$pregunta_seguridad</p>";
+    
 
     echo "<form action='reset_password_process.php' method='post'>";
     echo "<input type='hidden' name='correo' value='$correo_usuario'>";
