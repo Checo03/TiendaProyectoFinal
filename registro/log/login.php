@@ -49,9 +49,12 @@ if ($result->num_rows > 0) {
     } elseif (password_verify($password, $hashed_password)) {
         // Contraseña válida, restablecer intentos fallidos
         $_SESSION['intentos_fallidos'] = 0;
-
+        $_SESSION['usuario_logueado'] = $cuenta_correo;
+        header("Location: panel_control.php");
+        exit;
         // Resto del código para el login exitoso...
         echo "Inicio de sesión exitoso.";
+
     } else {
         
         $_SESSION['intentos_fallidos']++;

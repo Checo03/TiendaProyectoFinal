@@ -52,6 +52,8 @@ if ($resultado->num_rows > 0) {
 
         if ($conn->query($sql) === TRUE) {
             echo "Registro exitoso";
+            header("Location: log/login.html");
+            exit();
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
