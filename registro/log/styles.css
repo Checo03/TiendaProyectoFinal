@@ -34,3 +34,54 @@ img {
     height: auto;
     margin-bottom: 10px;
 }
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(fo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.Container-Login {
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 750px; 
+}
+
+.Form-Login {
+    display: flex;
+    flex-direction: column;
+}
+
+.Form-Control {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+small{
+    color: gray;
+}
+
+.Container-Login h1{
+    text-align: center;
+}

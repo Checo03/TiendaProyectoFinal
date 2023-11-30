@@ -2,42 +2,63 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="log/styles.css">
     <title>Formulario de Registro</title>
     <script src="validacion.js"></script>
 </head>
 <body>
-    <form action="registro.php" method="post" onsubmit="return validarFormulario()">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" required><br>
+    <div class="Container-Login">
+        <form class="Form-Login" action="registro.php" method="post" onsubmit="return validarFormulario()">
+            <h1>Formulario de Registro</h1>
 
-        <label for="cuenta">Cuenta:</label>
-        <input type="text" name="cuenta" required><br>
+            <div class="Form-Control">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" required>
+            </div>
 
-        <label for="correo">Correo Electrónico:</label>
-        <input type="email" name="correo" required><br>
+            <div class="Form-Control">
+                <label for="cuenta">Cuenta:</label>
+                <input type="text" name="cuenta" required>
+            </div>
 
-        <label for="pregunta">Pregunta de Seguridad:</label>
-        <select name="pregunta" required>
-            <option value="mascota">¿Cómo se llama tu mascota?</option>
-            <option value="ciudad">¿Ciudad donde naciste?</option>
-            <option value="amigo">¿Cómo se llama tu mejor amigo de la infancia?</option>
-        </select><br>
+            <div class="Form-Control">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" name="correo" required>
+            </div>
 
-        <label for="respuesta">Respuesta:</label>
-        <input type="text" name="respuesta" required><br>
+            <div class="Form-Control">
+                <label for="pregunta">Pregunta de Seguridad:</label>
+                <select name="pregunta" required>
+                    <option value="mascota">¿Cómo se llama tu mascota?</option>
+                    <option value="ciudad">¿Ciudad donde naciste?</option>
+                    <option value="amigo">¿Cómo se llama tu mejor amigo de la infancia?</option>
+                </select>
+            </div>
 
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password" id="password" required><br>
+            <div class="Form-Control">
+                <label for="respuesta">Respuesta:</label>
+                <input type="text" name="respuesta" required>
+            </div>
 
-        <label for="confirm_password">Repetir Contraseña:</label>
-        <input type="password" name="confirm_password" id="confirm_password" required onkeyup="validarPassword()"><br>
+            <div class="Form-Control">
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
 
-        <label for="clave_acceso">Clave de Acceso (solo para administradores):</label>
-        <input type="password" name="clave_acceso"><br>
+            <div class="Form-Control">
+                <label for="confirm_password">Repetir Contraseña:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required onkeyup="validarPassword()">
+            </div>
 
-        <span id="error_password" style="color:red;"></span><br>
+            <div class="Form-Control">
+                <label for="clave_acceso">Clave de Acceso (solo para administradores):</label>
+                <input type="password" name="clave_acceso">
+            </div>
 
-        <input type="submit" value="Registrar">
-    </form>
+            <span id="error_password" style="color:red;"></span>
+
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
 </body>
 </html>
