@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ayuda</title>
+    <link rel="stylesheet" href="estilos.css">
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>¿En qué podemos ayudarte?</h1>
+    <div class="soporte1">
+        <ol>
+            <li>
+                <details>
+                    <summary>¿Qué opciones de conectividad tienen?</summary>
+                    <p>Ofrecemos conectividad vía Bluetooth y cable auxiliar.</p>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>¿Cómo es la calidad de sonido?</summary>
+                    <p>Tenemos una excelente calidad de sonida en nuestros productos, manejamos diferentes proveedores, cada uno de ellos tienen características específicas que te pueden ayudar a ver tu mejor opción.</p>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>¿Se incluyen ajustes de ecualización o perfiles de sonido personalizables?</summary>
+                    <p>Si, depende del audífono que escojas, pero en general si cuentan con ecualización, directamente de la aplicación del proveedor.
+                    </p>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>¿Ofrecen una experiencia de sonido envolvente o mejorada?</summary>
+                    <p>Nuestros productos cuentan con cancelación de ruida tanto activa como pasiva, dependiendo del producto.</p>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>¿Tienen micrófono incorporado para llamadas telefónicas o asistentes de voz?</summary>
+                    <p>Si, nuestros productos cuentan con micrófono para tener "manos libres"</p>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>¿Existen controles táctiles o botones físicos para gestionar la reproducción de música y llamadas?</summary>
+                    <p>Si, dependiendo del producto, pero en su mayoría son táctiles</p>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>¿Hay actualizaciones de firmware disponibles para mejorar el rendimiento?</summary>
+                    <p>Si, desde la aplicación de la marca del producto.</p>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>¿Viene con estuche de carga? ¿Cuáles son los accesorios incluidos?</summary>
+                    <p>No, todos nuestros productos traen únicamente su cubo de carga y cable de carga.</p>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>¿Tienen garantía los productos?</summary>
+                    <p>Si, 6 meses con nosotros y 1 año con proveedor.</p>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>¿Cómo puedo devolver un producto?</summary>
+                    <p>Si en dado caso, te interesa devolver el producto tienes que comunicarte con nosotros y te daremos los pasos a seguir para la devolución.</p>
+                </details>
+            </li>
+        </ol>
+    </div><center>
+    <h1>Agregar Pregunta</h1>
+    <form action="procesar_pregunta.php" method="post">
+        <label for="pregunta">Pregunta:</label>
+        <center><input type="text" id="pregunta" style="width: 600px;" name="pregunta"  required></center>
+        <br>
+        <label for="respuesta">Respuesta:</label>
+        <center><textarea id="respuesta" style="width: 600px;" name="respuesta" required></textarea></center>
+        <br>
+        <center> <button id="enviar" style="width: 400px;" height="100px" type="submit">Agregar</button>
+    </form></center>
+    <br><br><br>
+</body>
+</html>
