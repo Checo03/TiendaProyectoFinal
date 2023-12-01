@@ -6,7 +6,7 @@ if (isset($_SESSION['usuario_logueado'])) {
     $usuario_logueado = $_SESSION['usuario_logueado'];
 } else {
     // Si el usuario no está logeado, redirigir a la página de inicio de sesión
-    header("Location: login.php");
+    header("Location: log.php");
     exit;
 }
 

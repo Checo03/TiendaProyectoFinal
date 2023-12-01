@@ -1,6 +1,11 @@
 <?php
 session_start();
-
+//cookies
+if(!empty($_POST["remember"])){
+    setcookie("cuenta_correo",$_POST["cuenta_correo"],time()+3600);
+    setcookie("password",$_POST["password"],time()+3600);
+   
+}
 if (empty($_POST['cuenta_correo']) || empty($_POST['password']) || empty($_POST['captcha'])) {
     echo "Todos los campos son obligatorios.";
     exit;
