@@ -216,15 +216,13 @@ display: block;
 }
 
 .image_title {
-background-image: url(images/flecha.gif);
-background-size: 8%;
-background-repeat: no-repeat;
 background-color: black;
 color: white;
-text-align: right;
+text-align: center;
 position: absolute;
 left: 0; bottom: 0;	
-width: 640px;	
+width: 640px;
+font-weight: 600;	
 
 }
 .image_title a {
