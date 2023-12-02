@@ -6,7 +6,7 @@
     <title>Acerca de Nosotros</title>
     <link rel="shortcut icon" href="Media/favicon.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/0fe4f3447c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Estilos/style.css">
+    <link rel="stylesheet" href="Estilos/AcercaEstilos.css">
 </head>
 <body>
     <header class="Cabecera-Header">
