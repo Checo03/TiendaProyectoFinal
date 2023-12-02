@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .Container-Inicio{
     position: relative;
+    background-color: beige;
 }
 
 .Container-Inicio body{
@@ -59,45 +62,34 @@ body{
 
 /*------------------------   Categorias   --------------------------------*/
 
-.Container-Categorias{
-    position: relative;
-    padding: 60px 0;
-}
-
-.Categorias-Title{
-    margin-bottom: 50px;
-}
-
-.Categorias-Title h1{
-    color: white;
-    background-color: #232D3F;
-    position: relative;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 300;
-    padding-bottom: 10px;
-
-    border: 1px solid #000000; 
-    padding: 15px; 
-    border-radius: 10px;
-
-    
-}
-
 .Categorias{
     display: flex;
     justify-content: space-evenly;
 }
 
+.Container-Categorias{
+    position: relative;
+    padding: 60px 0;
+}
+
+.Categorias-Title h2{
+    font-family: 'Roboto', sans-serif;
+    color: #005B41;
+    text-align: center;
+    font-weight: 700;    
+}
+
 .Categoria-Foto{
     position: relative;
     width: 50%;
-    max-width: 300px;
+    max-width: 350px;
 }
 
 .Img-Cat{
     display: block;
-    
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .Text-Categoria{
@@ -118,12 +110,6 @@ body{
 .Categoria-Foto:hover .Text-Categoria{
     opacity: 1;
 }
-
-.Container-Categorias img{
-    width: 301px;
-    height: 400px;
-}
-
 .Container-Categorias{
     background-color: beige;
 }
@@ -229,3 +215,54 @@ body{
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+.accordian {
+    width: 70%; height: 400px;
+    overflow: hidden;
+    margin: 40px auto 40px auto;
+    background-color: black;
+    }
+    .accordian ul {
+    width: 2000px;
+    }
+    
+    .accordian li {
+    position: relative;
+    display: block;
+    width: 160px;
+    float: left;
+    
+    border-left: 1px solid #888;
+    
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    }
+    .accordian ul:hover li {width: 40px;}
+    .accordian ul li:hover {width: 640px;}
+    
+    
+    .accordian li img {
+    display: block;
+    }
+    
+    .image_title {
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 0; bottom: 0;	
+    width: 640px;
+    font-weight: 600;	
+    
+    }
+    .image_title a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 16px;
+    }
