@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ayuda</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="AyudaEstilos.css">
     <!--Icon-Font-->
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
@@ -74,16 +74,19 @@
             </li>
         </ol>
     </div><center>
-    <h1>Agregar Pregunta</h1>
-    <form action="procesar_pregunta.php" method="post">
-        <label for="pregunta">Pregunta:</label>
-        <center><input type="text" id="pregunta" style="width: 600px;" name="pregunta"  required></center>
-        <br>
-        <label for="respuesta">Respuesta:</label>
-        <center><textarea id="respuesta" style="width: 600px;" name="respuesta" required></textarea></center>
-        <br>
-        <center> <button id="enviar" style="width: 400px;" height="100px" type="submit">Agregar</button>
-    </form></center>
-    <br><br><br>
+    <div class="Container-Pregunta">
+        <h1>Agregar Pregunta</h1>
+        <form action="procesar_pregunta.php" method="post">
+            <label for="pregunta">Pregunta:</label>
+            <center><input type="text" id="pregunta" style="width: 600px;" name="pregunta"  required></center>
+            <br>
+            <label for="respuesta">Respuesta:</label>
+            <center><textarea id="respuesta" style="width: 600px;" name="respuesta" required></textarea></center>
+            <br>
+            <center> <button id="enviar" style="width: 200px;" height="400px" type="submit">Agregar</button>
+        </form></center>
+        <br><br><br>    
+    </div>
+    
 </body>
 </html>
