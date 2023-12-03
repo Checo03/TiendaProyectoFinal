@@ -1,0 +1,258 @@
+body{
+    margin: 0;
+    padding: 0 auto;
+    font-family: sans-serif;
+}
+
+
+#main-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: beige;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#formulario{
+    background-color: white;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#redes-sociales, #carrusel {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#formulario form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#submit-button {
+    background-color: rgb(0, 54, 32) ;
+    color: #FFF;
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+#submit-button:hover{
+    background-color: rgb(62, 128, 101);
+    color: rgb(0, 54, 32);
+}
+
+#redes-sociales a {
+    margin-right: 10px;
+}
+
+#ubicacion{
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    background-color: beige;
+    padding: 20px;
+}
+
+#ubicacion iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 8px;
+}
+
+#ubicacion p{
+    text-align: center; 
+    font-size: large;
+    margin: 0;
+}
+
+
+body{
+    margin: 0;
+}
+
+.Container-Cabecera{   
+    color: white;
+    padding: 0 50px;
+    line-height: 1.4em;
+    font-size:larger; 
+}
+
+.Cabecera-Header{
+    color: white;
+    background-color: #005B41;
+}
+
+.Cabecera-Header a{
+    color: white;
+    text-decoration: none;
+}
+
+.Nav-Container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.Cabecera-Nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.Cabecera-Contenido ul li{
+    margin-right: 50px;
+}
+
+.Cabecera-Sesion ul li{
+    margin-right: 20px;
+}
+
+
+.Cabecera-Nav ul li a{
+    display: block;
+    padding: 0.5rem;
+    transition: all 0.5s linear;
+    border-radius: 5px;
+}
+
+.Cabecera-Nav ul li a:hover{
+background-color: #008170;
+}
+
+.Cabecera-Header img{
+    margin: 0;
+    height: 100%;
+    width: auto;
+    display: block;
+}
+#revoltStudio {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente según tus preferencias */
+    font-size: 16px; /* Tamaño del texto */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+    color: #333; /* Color del texto */
+    margin: 20px; /* Márgenes alrededor del div */
+    padding: 20px; /* Relleno interno del div */
+}
+.ultimos-proyectos a {
+    margin-bottom: 1.5rem;
+}
+
+.ultimos-proyectos img {
+    transition: all .3s ease;
+    min-width: 100%;
+}
+
+.ultimos-proyectos a:hover img {
+    transform: scale(1.20);
+}
+* {
+margin: 0; 
+padding: 0;
+}
+.accordian {
+width: 70%; height: 400px;
+overflow: hidden;
+
+margin: 100px auto;
+background-color: black;
+}
+.accordian ul {
+width: 2000px;
+}
+
+.accordian li {
+position: relative;
+display: block;
+width: 160px;
+float: left;
+
+border-left: 1px solid #888;
+
+box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+
+transition: all 0.5s;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+}
+.accordian ul:hover li {width: 40px;}
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+display: block;
+}
+
+.image_title {
+background-color: black;
+color: white;
+text-align: center;
+position: absolute;
+left: 0; bottom: 0;	
+width: 640px;
+font-weight: 600;	
+
+}
+.image_title a {
+display: block;
+color: #fff;
+text-decoration: none;
+padding: 20px;
+font-size: 16px;
+}
+#Contenedor-Contacto{
+text-align: justify;
+justify-content: center;
+align-items: center;
+height: 30vh;
+width: 100%;
+height: 350px;
+background-color: #008170;
+margin: 20px;
+box-shadow: 0 2px 15px rgba(0, 0, 0, 0.363);
+border-radius: 10px;
+transition: box-shadow 0.3s ease-in-out;
+color: white;
+padding: 3%;
+}
+#Contenedor-Contacto:hover {
+box-shadow: 8px 15px 23px rgba(0, 0, 0, 0.459);
+color: white;
+}
+
+
+.Container-Form h1{
+    font-weight: 600;
+}

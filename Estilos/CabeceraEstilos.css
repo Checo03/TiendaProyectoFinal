@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+}
+
+.Container-Cabecera{   
+    color: white;
+    padding: 0 50px 0;
+    line-height: 1.4em;
+    font-size:larger; 
+}
+
+.Cabecera-Header{
+    color: white;
+    background-color: #005B41;
+
+    /* Mantener la Cabecera en la misma Posicion
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    */
+}
+
+.Cabecera-Header a{
+    color: white;
+    text-decoration: none;
+}
+
+.Nav-Container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.Cabecera-Nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.Cabecera-Contenido ul li{
+    margin-right: 20px;
+}
+
+.Cabecera-Sesion ul li{
+    margin-right: 20px;
+}
+
+
+.Cabecera-Nav ul li a{
+    display: block;
+    padding: 0.5rem;
+    transition: all 0.5s linear;
+    border-radius: 5px;
+}
+
+.Cabecera-Nav ul li a:hover{
+   background-color: #008170;
+}
+
+.Cabecera-Header img{
+    margin: 0;
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+.Cabecera-BarraBusqueda input{
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+}
+
+.Cabecera-BarraBusqueda button{
+    background-color: #008170;
+    border-radius: 10px;
+    border: none;
+}
+
