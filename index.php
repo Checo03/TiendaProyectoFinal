@@ -38,7 +38,7 @@
                                     <a class="dropdown-item" href="contactanos.php">Contactanos</a>
                                 </div>
                             </li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <form style="margin-left: 160px;" class="d-flex" action="">
                                 <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
