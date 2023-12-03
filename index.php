@@ -159,6 +159,78 @@
                 </div>
             </div>
 
+            <!-- Comentarios -->
+            <section class="wrapper">
+                <div class="container">
+                    <div class="row">
+                    <div class="Categorias-Title" style="margin-bottom: 30px;">
+                        <h2>Comentrios sobre nuestros productos...</h2>
+                    </div>
+                    </div>
+                <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url('Media/Img/Inicio/Diadema.jpg');">
+                        <img class="card-img d-none" src="" alt="Media/Img/Inicio/Diadema.jpg">
+                        <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <small class="card-meta mb-2">Comentario</small>
+                            <h4 class="card-title mt-0 "><a class="text-dark" herf="https://creativemanner.com">¡Estoy impresionada con los audífonos inalámbricos que compré, definitivamente recomendaría estos audífonos a cualquier amante de la música!</a></h4>
+                        <small><i class="far fa-clock"></i> Noviembre 29, 2023</small>
+                        </div>
+                        <div class="card-footer">
+                        <div class="media">
+                <img class="mr-3 rounded-circle" src="Media/Img/Inicio/users.png" alt="Generic placeholder image" style="max-width:50px">
+                <div class="media-body">
+                    <h6 class="my-0 text-dark d-block">María López</h6>
+                    <small>Cliente frecuente</small>
+                </div>
+                </div>
+                        </div>
+                        </div>
+                    </div></div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url('Media/Img/Inicio/Earbuds.jpg');">
+                        <img class="card-img d-none" src="Media/Img/Inicio/Earbuds.jpg" alt="">
+                        <div class="card-img-overlay d-flex flex-column">       
+                        <div class="card-body">
+                            <small class="card-meta mb-2">Comentario</small>
+                            <h4 class="card-title mt-0 "><a class="text-dark" herf="https://creativemanner.com">Los audífonos deportivos que adquirí son simplemente geniales. ¡Totalmente satisfecho con mi compra!</a></h4>
+                        <small><i class="far fa-clock"></i> Diciembre 01, 2023</small>
+                        </div>
+                        <div class="card-footer">
+                        <div class="media">
+                <img class="mr-3 rounded-circle" src="Media/Img/Inicio/users.png" alt="Generic placeholder image" style="max-width:50px">
+                <div class="media-body">
+                    <h6 class="my-0 text-dark d-block">Juan González</h6>
+                    <small>Cliente frecuente</small>
+                </div>
+                </div>
+                        </div>
+                        </div>
+                    </div></div>
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-dark card-has-bg click-col" style="background-image:url('Media/Img/Inicio/comentarios.jpg');">
+                        <img class="card-img d-none" src="" alt="Media/Img/Inicio/comentarios.jpg">
+                        <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <small class="card-meta mb-2">Comentario</small>
+                            <h4 class="card-title mt-0 "><a class="text-dark" herf="https://creativemanner.com">Mis nuevos audífonos con cancelación de ruido son una maravilla. La cancelación de ruido es increíblemente efectiva.</a></h4>
+                        <small><i class="far fa-clock"></i> Noviembre 26, 2023</small>
+                        </div>
+                        <div class="card-footer">
+                        <div class="media">
+                <img class="mr-3 rounded-circle" src="Media/Img/Inicio/users.png" alt="Generic placeholder image" style="max-width:50px">
+                <div class="media-body">
+                    <h6 class="my-0 text-dark d-block">Emily Smith</h6>
+                    <small>Cliente frecuente</small>
+                </div>
+                </div>
+                        </div>
+                        </div>
+                    </div></div>                
+                </div>
+                
+                </div>
+                </section>
+
+            <!-- Ultimas ofertas     -->
             <div class="Container-Ofertas">
                 <div class="container">
                     <div class="row justify-content-center">
