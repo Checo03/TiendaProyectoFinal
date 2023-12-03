@@ -5,32 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revolt Sound Studio</title>
     <link rel="shortcut icon" href="Media/Img/Favicon/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
+    <link rel="stylesheet" href="Estilos/InicioEstiloss.css">
+    <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
     <link rel="stylesheet" href="Estilos/Contactanos.css">
+
+
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>
 </head>
 <body id="main-container">
-    <header class="Cabecera-Header">
-        <div class="Container-Cabecera Nav-Container">
-            <img src="images/logo.jpeg" alt="LOGO" style="width: 150px;  height: 150px;">
-            <nav class="Cabecera-Nav Cabecera-Contenido">
-                <ul>
-                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Categorias</a></li>
-                    <li><a href="#">Conocenos</a></li>
-                    <li><a href="#">Acerca De</a></li>
-                </ul>
+<header class="header">
+            <nav class="navbar navbar-expand-lg fixed-top py-2" style="background-color: #005B41;">
+                <div class="containerN">
+                    <a href="#" class="navbar-brand"><img src="Media/Img/logo_final.png" alt="LOGO" style="width: 70px;  height: 60px;"></a>
+                    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+                    
+                    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                        <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+                            <li class="nav-item active" style="margin-right: 10px; margin-left: 30px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Inicio <span class="sr-only">(current)</span></a></li>
+                            <li class="nav-item dropdown" style="margin-right: 10px;">
+                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoria</button>
+                                <div class="dropdown-menu">    
+                                    <!-- Menu Admin  
+                                    <a class="dropdown-item" href="#">Altas Productos</a>
+                                    <a class="dropdown-item" href="#">Bajas Productos</a>
+                                    Fin Menu Admin  -->
+                                    <a class="dropdown-item" href="#">Diademas</a>
+                                    <a class="dropdown-item" href="#">EarBuds</a>
+                                    <a class="dropdown-item" href="contactanos.php">Contactanos</a>
+                                </div>
+                            </li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
+                            <form style="margin-left: 160px;" class="d-flex" action="">
+                                <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                            <li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="#" class="btn btn-outline-primary">Login</a></li>
+                            <li class="nav-item" style="margin-right: 5px;"><a href="#" class="btn btn-outline-primary">Registrarse</a></li>
+                            <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>       
+                        </ul>
+                    </div>
+                </div>
             </nav>
-            <nav class="Cabecera-Nav Cabecera-Sesion">
-                <ul>
-                    <li><a href="#">Registrate</a></li>
-                    <li><a href="#">Inciar Sesion</a></li>
-                </ul>
-            </nav>
-            <a href="#"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></a>
-        </div>
-    </header>
-    <div class="Container-Form">
-        <br><br>
+        </header>      
+        <br><br><br><br>
         <h1>CONTACTANOS</h1>
         
         <div class="Container-Form">
@@ -95,6 +117,42 @@
             Abierto ⋅ Cierra a las 9 p.m.</b> </p>
     </div>
     <br><br>
+    <div class="Container-Footer">
+            <footer>
+                    <div class="footer-content">
+                        <div class="contact-info">
+                            <h2>Información de Contacto</h2>
+                            <p><i class="fas fa-map-marker-alt"></i> Dirección: Aguascalientes MX</p>
+                            <p><i class="fas fa-phone"></i> Teléfono: +449-584-4979</p>
+                            <p><i class="fas fa-envelope"></i> Correo Electrónico: revoltstudio@empresa.com</p>
+                        </div>
+                        <div class="social-links">
+                            <h2>Síguenos en Redes Sociales</h2>
+                            <div class="icon-container">
+                                <span class="separator">|</span>
+                                <a href="https://www.facebook.com/emi.harrera"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                <span class="separator">|</span>
+                                <a href="https://twitter.com/emiiherrerra_10"><i class="fab fa-twitter fa-lg"></i></a>
+                                <span class="separator">|</span>
+                                <a href="https://www.instagram.com/e.jherrera.10/"><i class="fab fa-instagram fa-lg"></i></a>
+                                <span class="separator">|</span>
+                                <a href="https://www.youtube.com"><i class="fab fa-youtube fa-lg"></i></a>
+                                <span class="separator">|</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="copyright">
+                        &copy; 2023 REVOLT-STUDIO| Todos los derechos reservados.
+                    </div>
+                    <div class="empresa2">
+                        <img src="Media/Img/logo_final.png" width="100"  alt="">
+                    </div>
+            </footer>
+        </div>
+    </div>
     
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
