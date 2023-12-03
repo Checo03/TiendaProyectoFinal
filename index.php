@@ -20,27 +20,33 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg fixed-top py-2">
                 <div class="containerN">
-                    <a href="#" class="navbar-brand"><img src="Media/Img/logo_final.png" alt="LOGO" style="width: 70px;  height: 60px;"></a>
+                    <a href="index.php" class="navbar-brand"><img src="Media/Img/logo_final.png" alt="LOGO" style="width: 70px;  height: 60px;"></a>
                     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                     
                     <div id="navbarSupportedContent" class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-                            <li class="nav-item active" style="margin-right: 10px; margin-left: 30px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Inicio <span class="sr-only">(current)</span></a></li>
                             <li class="nav-item dropdown" style="margin-right: 10px;">
-                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoria</button>
+                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
                                 <div class="dropdown-menu">    
-                                    <!-- Menu Admin  
-                                    <a class="dropdown-item" href="#">Altas Productos</a>
-                                    <a class="dropdown-item" href="#">Bajas Productos</a>
-                                    Fin Menu Admin  -->
+                                    <a class="dropdown-item" href="#">Ver Todo</a>
                                     <a class="dropdown-item" href="#">Diademas</a>
                                     <a class="dropdown-item" href="#">EarBuds</a>
-                                    <a class="dropdown-item" href="contactanos.php">Contactanos</a>
+                                    <!--Lista De Marcas -->
                                 </div>
                             </li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
-                            <form style="margin-left: 160px;" class="d-flex" action="">
+                            <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
+                            <!-- Menu Admin 
+                            <li class="nav-item dropdown" style="margin-right: 10px;">
+                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
+                                <div class="dropdown-menu">    
+                                    <a class="dropdown-item" href="#">Altas</a>
+                                    <a class="dropdown-item" href="#">Bajas</a>
+                                    <a class="dropdown-item" href="#">Cambios</a>
+                                </div>
+                            </li>  -->
+                            <form style="margin-left: 80px;" class="d-flex" action="">
                                 <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
                                 <button class="btn btn-outline-success" type="submit">Buscar</button>
                             </form>
