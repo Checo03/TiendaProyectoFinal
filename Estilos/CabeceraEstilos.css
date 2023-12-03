@@ -1,80 +1,90 @@
-body{
-    margin: 0;
+.navbar {
+    transition: all 0.4s;
+}
+.navbar .nav-link {
+    color: #fff;
+    display: block;
 }
 
-.Container-Cabecera{   
-    color: white;
-    padding: 0 50px 0;
-    line-height: 1.4em;
-    font-size:larger; 
-}
-
-.Cabecera-Header{
-    color: white;
-    background-color: #005B41;
-
-    /* Mantener la Cabecera en la misma Posicion
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    */
-}
-
-.Cabecera-Header a{
-    color: white;
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #005B41;
     text-decoration: none;
 }
 
-.Nav-Container{
+.navbar .navbar-brand {
+    color: #fff;
+    display: block;
+}
+.containerN{
     display: flex;
     justify-content:space-between;
     align-items: center;
 }
 
-.Cabecera-Nav ul{
-    margin: 0;
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #005B41;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #fff;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #7e7777;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #005B41;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #fff;
+    }
+}
+
+.custom-dropdown-btn {
+    background-color: transparent; 
+    border: none; 
+    color: inherit; 
+    cursor: pointer; 
     padding: 0;
-    list-style: none;
-    display: flex;
 }
 
-.Cabecera-Contenido ul li{
-    margin-right: 20px;
+.custom-dropdown-btn:hover,
+.custom-dropdown-btn:focus {
+    text-decoration: underline; 
 }
 
-.Cabecera-Sesion ul li{
-    margin-right: 20px;
+.custom-dropdown-btn:active {
+    outline: none; 
 }
 
-
-.Cabecera-Nav ul li a{
-    display: block;
-    padding: 0.5rem;
-    transition: all 0.5s linear;
-    border-radius: 5px;
-}
-
-.Cabecera-Nav ul li a:hover{
-   background-color: #008170;
-}
-
-.Cabecera-Header img{
-    margin: 0;
-    height: 100%;
-    width: auto;
+.navbar .nav-item.dropdown:hover .dropdown-menu {
     display: block;
 }
 
-.Cabecera-BarraBusqueda input{
-    border-radius: 5px;
-    border: 0;
-    outline: none;
+.navbar .nav-item.dropdown .dropdown-menu {
+    background-color: #005B41;
+    box-shadow: none; 
+    border: none; 
 }
 
-.Cabecera-BarraBusqueda button{
-    background-color: #008170;
-    border-radius: 10px;
-    border: none;
+.navbar .nav-item.dropdown .dropdown-item {
+    color: #fff;
 }
 
+.navbar .nav-item.dropdown .dropdown-item:hover {
+    background-color: #007856; 
+}

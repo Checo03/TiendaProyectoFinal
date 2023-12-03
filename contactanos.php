@@ -95,53 +95,7 @@
             Abierto ⋅ Cierra a las 9 p.m.</b> </p>
     </div>
     <br><br>
-    <section>
-        <h2 style="font-weight: 600;">CONOCE TODOS NUESTROS PRODUCTOS...</h2>
-    <div class="accordian">
-        <ul>
-            <li>
-                <div class="image_title">
-                    <a href="#">Audífonos Gamer Inalámbricos - Blancos</a>
-                </div>
-                <a href="#">
-                    <img style="height: 400px; width: 685px;" src="Media/Img/Contactanos/promos/audif.jpg"/>
-                </a>
-            </li>
-            <li>
-                <div class="image_title">
-                    <a href="#">Audífonos Gamer Inalámbricos - Morados</a>
-                </div>
-                <a href="#">
-                    <img style="height: 400px; width: 890px;" src="Media/Img/Contactanos/promos/audiff2.jpeg">
-                </a>
-            </li>
-            <li>
-                <div class="image_title">
-                    <a href="#">Audífonos Gamer Inalámbricos - Amarillos</a>
-                </div>
-                <a href="#">
-                    <img style="height: 400px; width: 760px;" src="Media/Img/Contactanos/promos/audiff3.jpeg"/>
-                </a>
-            </li>
-            <li>
-                <div class="image_title">
-                    <a href="#">Audífonos Gamer Inalámbricos - Verde Platino</a>
-                </div>
-                <a href="#">
-                    <img style="height: 400px; width: 760px;" src="Media/Img/Contactanos/promos/audi4.jpeg"/>
-                </a>
-            </li>
-            <li>
-                <div class="image_title">
-                    <a href="#">Audífonos Gamer Inalámbricos - Negros</a>
-                </div>
-                <a href="#">
-                    <img style="height: 400px; width: 785px;" src="Media/Img/Contactanos/promos/audif5.jpg"/>
-                </a>
-            </li>
-        </ul>
-    </div>
-</section>
+    
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
