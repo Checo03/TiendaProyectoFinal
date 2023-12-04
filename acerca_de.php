@@ -60,7 +60,7 @@
             </nav>
         </header>    
     </div>
-
+    <br><br><br>
     <div class="contenedor-estiloAD">
         <section id="sectionAD">
             <h2 id="h2AD"><i class="fa-solid fa-headphones fa-bounce"></i> ¿QUIÉNES SOMOS?</h2>
