@@ -44,7 +44,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Panel de Control</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="sty.css">
 </head>
 <body>
     <div class="Container-Login">

@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
         // La cuenta está bloqueada
         echo "Su cuenta está bloqueada. ";
         echo "Su cuenta está bloqueada. ";
-        echo '<a href="recuper.php">Recuperar cuenta</a>';
+        echo '<a href="recover_password.html">Recuperar cuenta</a>';
     exit;
     } elseif (password_verify($password, $hashed_password)) {
         // Contraseña válida, restablecer intentos fallidos
