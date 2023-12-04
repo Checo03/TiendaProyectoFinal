@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 //cookies
@@ -13,7 +14,7 @@ if (empty($_POST['cuenta_correo']) || empty($_POST['password']) || empty($_POST[
 
 // CAPTCHA
 if ($_POST['captcha'] !== $_SESSION['captcha']) {
-    echo "El código CAPTCHA no es válido.";
+    echo "<script>alert('El código CAPTCHA no es válido.'); window.location.href = 'log.php';</script>";
     exit;
 }
 
@@ -47,9 +48,7 @@ if ($result->num_rows > 0) {
 
     if ($bloq == 1) {
         // La cuenta está bloqueada
-        echo "Su cuenta está bloqueada. ";
-        echo "Su cuenta está bloqueada. ";
-        echo '<a href="recover_password.html">Recuperar cuenta</a>';
+        echo "<script>alert('Su cuenta esta bloqueada. Puede recuperarla aun...'); window.location.href = 'recover_password.html';</script>";
     exit;
     } elseif (password_verify($password, $hashed_password)) {
         // Contraseña válida, restablecer intentos fallidos

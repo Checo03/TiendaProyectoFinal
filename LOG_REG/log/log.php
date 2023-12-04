@@ -11,6 +11,7 @@ if (!empty($_POST["remember"])) {
 <link rel="shortcut icon" href="../../Media/Img/Favicon/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="CabeceraEstilos.css">
 <link rel="stylesheet" href="../../Estilos/PiePaginaEstilos.css">
+<link rel="stylesheet" href="../../Estilos/LoginEstilos.css">
 
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
@@ -62,7 +63,7 @@ if (!empty($_POST["remember"])) {
                                 </div>
                             </li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="../../acerca_de.php" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="../../contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
                     
                             <form style="margin-left: 80px;" class="d-flex" action="">
@@ -80,50 +81,66 @@ if (!empty($_POST["remember"])) {
        
         </header>   
     </div>  
-        </header> 
-    <div class="Container-Login">
-        <form class="Form-Login" action="login.php" method="post">
-            <h1>Iniciar Sesión</h1>
-            <div class="Form-Control">
-                <label for="cuenta_correo">Nombre de cuenta o Correo Electrónico:</label>
-                <input type="text" name="cuenta_correo" required value="<?php if (isset($_COOKIE["cuenta_correo"])) {echo $_COOKIE["cuenta_correo"];}?>">
-            </div>
+        
+        <div class="Container-Login">
+    <form class="Form-Login" action="login.php" method="post">
+        <h1>Iniciar Sesión</h1>
+        <div class="Form-Control">
+            <label for="cuenta_correo">Nombre de cuenta o Correo Electrónico:</label>
+            <input type="text" name="cuenta_correo" required value="<?php echo isset($_COOKIE["cuenta_correo"]) ? $_COOKIE["cuenta_correo"] : ''; ?>">
+        </div>
 
-            <div class="Form-Control">
-                <label for="password">Contraseña:</label>
-                <input type="password" name="password" required value="<?php if (isset($_COOKIE["password"])) {echo $_COOKIE["password"];}?>">
-            </div>
+        <div class="Form-Control">
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" required value="<?php echo isset($_COOKIE["password"]) ? $_COOKIE["password"] : ''; ?>">
+        </div>
 
-            <div class="Form-Control">
-                <label for="captcha">Captcha:</label>
-                <img src="captcha.php" alt="CAPTCHA">
-                <br>
-                <input type="text" name="captcha" required>
-            </div>
+        <div class="Form-Control">
+            <label for="captcha">Captcha:</label>
+            <img src="captcha.php" alt="CAPTCHA">
+            <br>
+            <input type="text" name="captcha" required>
+        </div>
 
-            <div class="Form-Control">
-                <label for="remember">Recordar sesión:</label>
-                <input type="checkbox" name="remember" id="remember">
-            </div>
+        <div class="Form-Control">
+            <label for="remember">Recordar sesión:</label>
+            <input type="checkbox" name="remember" id="remember">
+        </div>
 
-            <script>
+        <script>
             // Obtener la referencia al elemento de la casilla de verificación
             var checkbox = document.getElementById("remember");
 
             // Verificar si la cookie existe
-            if (document.cookie.indexOf("password") !== -1) {
+            var passwordCookie = getCookie("password");
+            if (passwordCookie !== "") {
                 // Marcar la casilla si la cookie existe
                 checkbox.checked = true;
             }
-            </script>
-            <div class="row">
-                <button onclick="window.location.href='../registro.html'" style="margin-left: 100px;">¿No tienes cuenta? Regístrate</button>
-                <button type="submit" style="margin-left: 100px;">Iniciar Sesión</button>
-            </div>
-        </form>
 
-        
-    </div>
+            // Función para obtener el valor de una cookie por nombre
+            function getCookie(cookieName) {
+                var name = cookieName + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var cookieArray = decodedCookie.split(';');
+                for (var i = 0; i < cookieArray.length; i++) {
+                    var cookie = cookieArray[i].trim();
+                    if (cookie.indexOf(name) === 0) {
+                        return cookie.substring(name.length, cookie.length);
+                    }
+                }
+                return "";
+            }
+            
+        </script>
+
+        <div class="row">
+            <button onclick="window.location.href='../registro.html'" style="margin-left: 100px;">¿No tienes cuenta? Regístrate</button>
+            <button type="submit" style="margin-left: 100px;">Iniciar Sesión</button>
+        </div>
+    </form>
+</div>
+
     <div class="Container-Footer">
         <footer>
                 <div class="footer-content">

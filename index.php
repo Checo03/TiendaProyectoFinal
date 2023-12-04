@@ -50,18 +50,8 @@
                                 </div>
                             </li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="acerca_de.php" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
-
-                            <!-- Menu Admin 
-                            <li class="nav-item dropdown" style="margin-right: 10px;">
-                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
-                                <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Altas</a>
-                                    <a class="dropdown-item" href="#">Bajas</a>
-                                    <a class="dropdown-item" href="#">Cambios</a>
-                                </div>
-                            </li>  -->
 
                             <form style="margin-left: 80px;" class="d-flex" action="">
                                 <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
@@ -103,8 +93,8 @@
     
 <?php  } else {
     // Si el usuario no está logeado, redirigir a la página de inicio de sesión
-    ?><li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="login.php" class="btn btn-outline-primary">Login</a></li>
-    <li class="nav-item" style="margin-right: 5px;"><a href="registrate.php" class="btn btn-outline-primary">Registrarse</a></li>
+    ?><li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="LOG_REG/log/log.php" class="btn btn-outline-primary">Login</a></li>
+    <li class="nav-item" style="margin-right: 5px;"><a href="LOG_REG/registro.html" class="btn btn-outline-primary">Registrarse</a></li>
   <?php  
     
 }$conn->close();

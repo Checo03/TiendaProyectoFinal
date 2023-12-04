@@ -30,11 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "UPDATE usuarios SET password = '$password_hashed', bloq = 0 WHERE correo = '$correo_usuario'";
             $conn->query($sql);
 
-            echo "<p>Contraseña restablecida con éxito.</p>";
+            echo "<script>alert('Contraseña Restablecida con exito'); window.location.href = 'panel_control.php';</script>";
 
             $conn->close();
         } else {
-            echo "<p>Las contraseñas no coinciden. Inténtalo de nuevo.</p>";
+            
+            echo "<script>alert('Contraseña No coinciden'); window.history.back();</script>";
         }
     } else {
         echo "<p>Respuesta incorrecta. Inténtalo de nuevo.</p>";
