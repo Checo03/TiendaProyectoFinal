@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revolt Studio Sounds</title>
+    <title>Revolt Sound Studio</title>
     <link rel="shortcut icon" href="Media/Img/Favicon/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link rel="stylesheet" href="Estilos/InicioEstiloss.css">
@@ -94,7 +94,7 @@
     
 <?php  } else {
     // Si el usuario no está logeado, redirigir a la página de inicio de sesión
-    ?><li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="Log_REG/log/log.php" class="btn btn-outline-primary">Login</a></li>
+    ?><li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="login.php" class="btn btn-outline-primary">Login</a></li>
     <li class="nav-item" style="margin-right: 5px;"><a href="Log_REG/registro.html" class="btn btn-outline-primary">Registrarse</a></li>
   <?php  
     
@@ -105,7 +105,9 @@
                     </div>
                 </div>
             </nav>
-        </header>      
+        </header>  
+        
+        
         <main>
             <div class="Img-Banner">
                 <div class="Container-Img-Banner">
