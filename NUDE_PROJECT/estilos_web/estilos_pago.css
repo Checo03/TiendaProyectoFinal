@@ -1,0 +1,122 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, rgb(1, 78, 46), rgb(12, 105, 67), rgb(43, 133, 95), rgb(88, 151, 126), white);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img.centered {
+    display: block;
+    margin: 0px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #008170;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    color: #333;
+    background-color: #008170;
+    font-family: 'Pacifico', cursive;
+}
+
+
+.payment-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.payment-option {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.3s;
+    flex-basis: 45%; /* Establece el ancho del contenedor al 45% del contenedor principal */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y la altura */
+}
+
+.payment-option:hover {
+    transform: scale(1.05);
+}
+
+.payment-option img {
+    width: 130px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.payment-option p {
+    font-size: 20px;
+    color: black;
+}
+
+.payment-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.payment-table th, .payment-table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+.payment-table th {
+    background-color: #333;
+    color: black;
+}
+
+.payment-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.payment-table tr:hover {
+    background-color: #ddd;
+}
+
+#payment-table img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px; /* Agregado para el margen */
+    border: 10px solid rgb(204, 204, 204); /* Agregado para el borde gris */
+    transition: transform 0.3s; /* Agregado para la transición */
+}
+
+#payment-table img:hover {
+    transform: scale(1.1); /* Agregado para el efecto de escala al pasar el ratón */
+}
+
+.payment-table p {
+    font-size: 18px;
+    color: black;
+}
+
+p {
+    color: white;
+    font-size: 18px;
+}
+.payment-row {
+    margin-bottom: 20px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
