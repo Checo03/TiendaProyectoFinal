@@ -102,27 +102,27 @@ if (!empty($_POST["remember"])) {
             </div>
 
             <div class="Form-Control">
-    <label for="remember">Recordar sesión:</label>
-    <input type="checkbox" name="remember" id="remember">
-</div>
+                <label for="remember">Recordar sesión:</label>
+                <input type="checkbox" name="remember" id="remember">
+            </div>
 
-<script>
-// Obtener la referencia al elemento de la casilla de verificación
-var checkbox = document.getElementById("remember");
+            <script>
+            // Obtener la referencia al elemento de la casilla de verificación
+            var checkbox = document.getElementById("remember");
 
-// Verificar si la cookie existe
-if (document.cookie.indexOf("password") !== -1) {
-    // Marcar la casilla si la cookie existe
-    checkbox.checked = true;
-}
-</script>
-
-            <button type="submit">Iniciar Sesión</button>
+            // Verificar si la cookie existe
+            if (document.cookie.indexOf("password") !== -1) {
+                // Marcar la casilla si la cookie existe
+                checkbox.checked = true;
+            }
+            </script>
+            <div class="row">
+                <button onclick="window.location.href='../registro.html'" style="margin-left: 100px;">¿No tienes cuenta? Regístrate</button>
+                <button type="submit" style="margin-left: 100px;">Iniciar Sesión</button>
+            </div>
         </form>
 
-        <div class="Register-Button">
-            <button onclick="window.location.href='../registro.html'">¿No tienes cuenta? Regístrate</button>
-        </div>
+        
     </div>
     <div class="Container-Footer">
         <footer>
