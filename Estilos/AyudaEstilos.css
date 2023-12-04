@@ -9,7 +9,14 @@ h1 {
     padding: 20px;
     font-weight: 600;
 }
-
+#preguntas {
+    height: 60px;
+    overflow-y: scroll;
+    padding-top: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    text-align: center;
+}
 .soporte1 {
     margin: 0 auto;
     background-color: #fff;
@@ -102,10 +109,35 @@ textarea {
     color: white;
 }
 
-.Container-Pregunta{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("Pregunta-Background.jpg");
+#ayuda2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../Media/Img/Ayuda/Pregunta-Background.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+
+.Container-Pregunta{
+    padding: 20px; 
+    border-radius: 10px;
+    margin: 20px auto; 
+    max-width: 800px; 
+}
+
+.Container-Contenido {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 8px; 
+}
+
+.Container-Pregunta h1 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.Container-Pregunta form {
+    text-align: center;
+}
+
+
+
