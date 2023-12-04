@@ -76,33 +76,33 @@
             <p>En el corazón de nuestra tienda en línea de audífonos, existe un equipo apasionado y comprometido que trabaja incansablemente para brindarte una experiencia auditiva excepcional. Cada miembro de nuestro equipo comparte una conexión profunda con el mundo del sonido, fusionando conocimientos técnicos con una pasión innata para ofrecer lo mejor en tecnología de audio.</p>
         </section>
                 <div class="slider">
-                    <span style="--i:2"><img src="Media/Img/Favicon/ImagenesAcerca/img2.png" alt="img2"></span>
-                    <span style="--i:3"><img src="Media/Img/Favicon/ImagenesAcerca/img3.png" alt="img3"></span>
-                    <span style="--i:4"><img src="Media/Img/Favicon/ImagenesAcerca/img4.png" alt="img4"></span>
-                    <span style="--i:5"><img src="Media/Img/Favicon/ImagenesAcerca/img5.png" alt="img5"></span>
-                    <span style="--i:6"><img src="Media/Img/Favicon/ImagenesAcerca/img6.png" alt="img6"></span>
-                    <span style="--i:7"><img src="Media/Img/Favicon/ImagenesAcerca/img7.png" alt="img7"></span>
-                    <span style="--i:8"><img src="Media/Img/Favicon/ImagenesAcerca/img8.png" alt="img8"></span>
-                    <span style="--i:9"><img src="Media/Img/Favicon/ImagenesAcerca/img9.png" alt="img9"></span>
+                    <span style="--i:2"><img src="Media/Img/AcercaDe/img2.png" alt="img2"></span>
+                    <span style="--i:3"><img src="Media/Img/AcercaDe/img3.png" alt="img3"></span>
+                    <span style="--i:4"><img src="Media/Img/AcercaDe/img4.png" alt="img4"></span>
+                    <span style="--i:5"><img src="Media/Img/AcercaDe/img5.png" alt="img5"></span>
+                    <span style="--i:6"><img src="Media/Img/AcercaDe/img6.png" alt="img6"></span>
+                    <span style="--i:7"><img src="Media/Img/AcercaDe/img7.png" alt="img7"></span>
+                    <span style="--i:8"><img src="Media/Img/AcercaDe/img8.png" alt="img8"></span>
+                    <span style="--i:9"><img src="Media/Img/AcercaDe/img9.png" alt="img9"></span>
                 </div>
     </div>
     <br><br><br><br><br><br><br><br>
 
     <div class="TARJETA">
         <div class="tarjetas">
-          <div style="background-image: url(Media/Img/Favicon/ImagenesAcerca/musica2.jpg);" class="tarjetas__item">
+          <div style="background-image: url(Media/Img/AcercaDe/musica2.jpg);" class="tarjetas__item">
             <h2 class="tarjetas__titulo">MISIÓN</h2>
             <div class="tarjetas__info">
               <p id="PT">Proporcionar a nuestros clientes una experiencia auditiva excepcional a través de una cuidadosa selección de audífonos de alta calidad, ofreciendo comodidad, estilo y rendimiento superior. Nos esforzamos por ser líderes en la industria de audio, brindando soluciones innovadoras y satisfaciendo las necesidades de nuestros clientes de manera integral.</p>
             </div>
           </div>
-          <div style="background-image: url(Media/Img/Favicon/ImagenesAcerca/musica3.jpg);" class="tarjetas__item">
+          <div style="background-image: url(Media/Img/AcercaDe/musica3.jpg);" class="tarjetas__item">
             <h2 class="tarjetas__titulo">VISIÓN</h2>
             <div class="tarjetas__info">
               <p id="PT">Ser reconocidos como la tienda en línea de referencia para audífonos, destacando por nuestra excelencia en servicio al cliente, variedad de productos de vanguardia y un compromiso constante con la satisfacción del usuario. Buscamos ser pioneros en la introducción de nuevas tecnologías y tendencias en el mercado de audio, elevando constantemente los estándares de calidad y brindando experiencias auditivas inigualables.</p>
             </div>
           </div>
-          <div style="background-image: url(Media/Img/Favicon/ImagenesAcerca/musica.jpg);" class="tarjetas__item">
+          <div style="background-image: url(Media/Img/AcercaDe/musica.jpg);" class="tarjetas__item">
             <h2 class="tarjetas__titulo">OBJETIVO</h2>
             <div class="tarjetas__info">
               <p id="PT">Ofrecer una amplia gama de audífonos de marcas líderes, adaptados a diversas preferencias y necesidades de los clientes. Buscamos alcanzar y mantener una posición destacada en el mercado, incrementando la participación de clientes satisfechos y expandiendo nuestra presencia online. Además, nos esforzamos por garantizar una experiencia de compra fácil y segura, respaldada por un servicio de atención al cliente excepcional.</p>
