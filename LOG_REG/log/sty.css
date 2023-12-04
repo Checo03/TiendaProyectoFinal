@@ -1,7 +1,7 @@
 /* styles.css */
 
 body {
-    display: flex;
+    
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -9,11 +9,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-form {
-    text-align: center;
-    max-width: 300px;
-    margin: auto;
-}
 
 h2 {
     text-align: center;
@@ -85,9 +80,7 @@ small{
 .Container-Login h1{
     text-align: center;
 }
-.Container-Login {
-    position: relative;
-}
+
 
 .Register-Button {
     position: absolute;

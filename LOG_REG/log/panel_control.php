@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // Verificar si el usuario está logeado
 if (isset($_SESSION['usuario_logueado'])) {
     $usuario_logueado = $_SESSION['usuario_logueado'];
@@ -9,8 +8,7 @@ if (isset($_SESSION['usuario_logueado'])) {
     header("Location: log.php");
     exit;
 }
-
-// Conectar a la base de datos (reemplaza con tus credenciales)
+// Conectar a la base de datos
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -56,7 +54,7 @@ $conn->close();
             <p><?php echo $mensaje_bienvenida; ?></p>
 
             <div class="Form-Control">
-                <a href="index.php">Ir al Inicio</a>
+                <a href="../../index.php">Ir al Inicio</a>
             </div>
 
             <div class="Form-Control">

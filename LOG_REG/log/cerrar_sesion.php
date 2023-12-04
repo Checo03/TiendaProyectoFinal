@@ -2,9 +2,9 @@
 session_start();
 
 // Destruir todas las variables de sesión
-session_destroy();
 
+session_destroy();
 // Redirigir a la página de inicio de sesión
-header("Location: log.php");
+header("Location: ../../index.php");
 exit;
 ?>
