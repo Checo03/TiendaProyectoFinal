@@ -15,7 +15,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>
 </head>
-<body id="bodyAD">
+    <br><br>
+<body id="main-container">
     <div class="Container-Header" style="background-color: #005B41;">
         <header class="header">
             <nav class="navbar navbar-expand-lg fixed-top py-2">
@@ -127,7 +128,7 @@
             <li id="liAD"><b>Sostenibilidad:</b> Compromiso con prácticas comerciales sociales y ambientalmente responsables, minimizando el impacto ambiental y contribuyendo positivamente a la comunidad.</li>
         </ol>
     <br><br><br><br>
-    <div style="border-radius: 50%; width: 50%;" class="contenedor-estiloAD">
+    <div class="contenedor-estiloAD">
         <center><section id="sectionAD">
             <h2 id="h2AD">CONTÁCTANOS PARA MAYOR INFORMACIÓN</h2>
             <br>
