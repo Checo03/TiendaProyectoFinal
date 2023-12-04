@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
 </head>
 <body id="bodyAD">
+    <div class="Container-Header" style="background-color: #005B41;">
     <header class="header">
         <nav class="navbar navbar-expand-lg fixed-top py-2">
             <div class="containerN">
@@ -52,6 +53,7 @@
             </div>
         </nav>
     </header>
+    </div>
 
     <div class="contenedor-estiloAD">
         <section id="sectionAD">
