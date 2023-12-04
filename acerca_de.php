@@ -72,7 +72,7 @@
                                     // administrador
                                     $mensaje_bienvenida = $es_admin ? "Bienvenido Administrador, $usuario_logueado!" : "Bienvenido Usuario, $usuario_logueado!";
                                 ?>
-                                    <p><?php echo $mensaje_bienvenida; ?></p>
+                                   
                                     <li class="nav-item dropdown" style="margin-right: 10px;">
                                     <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
                                     <div class="dropdown-menu">    
