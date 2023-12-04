@@ -46,12 +46,7 @@
     text-align: start;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
+#liAD {
     margin-top: 10px;
     color: #ccc;
 }
@@ -206,7 +201,7 @@ li {
     counter-reset: li-counter;
 }
 
-#lista5 > li{
+#lista5 > #liAD{
     position: relative;
     margin-bottom: 1.5em;
     padding: 1.5em;
@@ -215,7 +210,7 @@ li {
     box-shadow: 5px 20px 40px 3px rgba(0, 0, 0, 0.4);
 }
 
-#lista5 > li:before {
+#lista5 > #liAD:before {
     position: absolute;
     top: -0.3em;
     left: -0.5em;
