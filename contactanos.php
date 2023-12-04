@@ -37,21 +37,74 @@
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
+                            <?php
+session_start();
+// Verificar si el usuario está logeado
+
+// Conectar a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "proy";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+
+
+?>
                             <!-- Menu Admin 
-                            <li class="nav-item dropdown" style="margin-right: 10px;">
+                              -->
+                            <form style="margin-left: 80px;" class="d-flex" action="">
+                                <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                            <?php
+
+// Verificar si el usuario está logeado
+if (isset($_SESSION['usuario_logueado'])) {
+    $usuario_logueado = $_SESSION['usuario_logueado'];
+    ?>
+    <?php // Consulta SQL para obtener el estado de administrador del usuario
+$sql_admin = "SELECT admin FROM usuarios WHERE cuenta = '$usuario_logueado'";
+$result_admin = $conn->query($sql_admin);
+
+if ($result_admin->num_rows > 0) {
+    $row_admin = $result_admin->fetch_assoc();
+    $es_admin = $row_admin['admin'];
+    // administrador
+    $mensaje_bienvenida = $es_admin ? "Bienvenido Administrador, $usuario_logueado!" : "Bienvenido Usuario, $usuario_logueado!";
+    ?>
+    <p><?php echo $mensaje_bienvenida; ?></p>
+    <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
                                 <div class="dropdown-menu">    
                                     <a class="dropdown-item" href="#">Altas</a>
                                     <a class="dropdown-item" href="#">Bajas</a>
                                     <a class="dropdown-item" href="#">Cambios</a>
                                 </div>
-                            </li>  -->
-                            <form style="margin-left: 80px;" class="d-flex" action="">
-                                <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
-                                <button class="btn btn-outline-success" type="submit">Buscar</button>
-                            </form>
-                            <li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="#" class="btn btn-outline-primary">Login</a></li>
-                            <li class="nav-item" style="margin-right: 5px;"><a href="#" class="btn btn-outline-primary">Registrarse</a></li>
+                            </li>
+                            <?php
+                            } else {
+    // En caso de error, muestra un mensaje genérico
+    $mensaje_bienvenida = "Bienvenido, $usuario_logueado!";
+    ?><p><?php echo $mensaje_bienvenida; ?></p>
+    <?php
+}
+
+?>
+    <li class="nav-item" style="margin-right: 5px;"><a href="Log_REG/log/cerrar_sesion.php" class="btn btn-outline-primary">Cerrar Sesion</a></li>
+    
+<?php  } else {
+    // Si el usuario no está logeado, redirigir a la página de inicio de sesión
+    ?><li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="Log_REG/log/log.php" class="btn btn-outline-primary">Login</a></li>
+    <li class="nav-item" style="margin-right: 5px;"><a href="Log_REG/registro.html" class="btn btn-outline-primary">Registrarse</a></li>
+  <?php  
+    
+}$conn->close();
+?>                        
                             <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>       
                         </ul>
                     </div>
