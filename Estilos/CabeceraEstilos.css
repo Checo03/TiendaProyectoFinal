@@ -1,0 +1,90 @@
+.navbar {
+    transition: all 0.4s;
+}
+.navbar .nav-link {
+    color: #fff;
+    display: block;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #005B41;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+    display: block;
+}
+.containerN{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #005B41;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #fff;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #7e7777;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #005B41;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #fff;
+    }
+}
+
+.custom-dropdown-btn {
+    background-color: transparent; 
+    border: none; 
+    color: inherit; 
+    cursor: pointer; 
+    padding: 0;
+}
+
+.custom-dropdown-btn:hover,
+.custom-dropdown-btn:focus {
+    text-decoration: underline; 
+}
+
+.custom-dropdown-btn:active {
+    outline: none; 
+}
+
+.navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .nav-item.dropdown .dropdown-menu {
+    background-color: #005B41;
+    box-shadow: none; 
+    border: none; 
+}
+
+.navbar .nav-item.dropdown .dropdown-item {
+    color: #fff;
+}
+
+.navbar .nav-item.dropdown .dropdown-item:hover {
+    background-color: #007856; 
+}
