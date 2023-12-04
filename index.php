@@ -36,7 +36,7 @@
                                 </div>
                             </li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="acerca_de.php" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
                             <!-- Menu Admin 
                             <li class="nav-item dropdown" style="margin-right: 10px;">
