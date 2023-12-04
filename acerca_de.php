@@ -113,11 +113,11 @@
         </div>
         <br>
         <ol id="lista5">
-            <li><b>Calidad:</b> Compromiso con la excelencia y la entrega de productos de alta calidad que satisfan las expectativas y necesidades de los clientes.</li>
-            <li><b>Innovación:</b> Buscar constantemente nuevas tecnologías y tendencias en la industria del audio para ofrecer productos de vanguardia.</li>
-            <li><b>Integridad:</b> Operar con honestidad, transparencia y ética en todas las interacciones comerciales y relaciones con los clientes.</li>
-            <li><b>Inclusividad:</b> Fomentar un ambiente inclusivo que celebre la diversidad, tanto en el equipo interno como entre los clientes.</li> 
-            <li><b>Sostenibilidad:</b> Compromiso con prácticas comerciales sociales y ambientalmente responsables, minimizando el impacto ambiental y contribuyendo positivamente a la comunidad.</li>
+            <li id="liAD"><b>Calidad:</b> Compromiso con la excelencia y la entrega de productos de alta calidad que satisfan las expectativas y necesidades de los clientes.</li>
+            <li id="liAD"><b>Innovación:</b> Buscar constantemente nuevas tecnologías y tendencias en la industria del audio para ofrecer productos de vanguardia.</li>
+            <li id="liAD"><b>Integridad:</b> Operar con honestidad, transparencia y ética en todas las interacciones comerciales y relaciones con los clientes.</li>
+            <li id="liAD"><b>Inclusividad:</b> Fomentar un ambiente inclusivo que celebre la diversidad, tanto en el equipo interno como entre los clientes.</li> 
+            <li id="liAD"><b>Sostenibilidad:</b> Compromiso con prácticas comerciales sociales y ambientalmente responsables, minimizando el impacto ambiental y contribuyendo positivamente a la comunidad.</li>
         </ol>
     <br><br><br><br>
     <div style="border-radius: 50%; width: 50%;" class="contenedor-estiloAD">
