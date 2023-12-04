@@ -21,25 +21,20 @@ $captcha_text = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGH
 // Almacenar el valor del captcha en la sesión
 $_SESSION['captcha'] = $captcha_text;
 
-// Tamaño del texto (ajusta este valor para cambiar el tamaño)
-$font_size = 3000; // Reduje el tamaño del texto
+$font_size = 3000;
 
-// Añadir el texto a la imagen
 imagestring($image, $font_size, 10, 10, $captcha_text, $text_color);
 
-// Aplicar distorsión e inclinación a la imagen
-imagefilter($image, IMG_FILTER_SMOOTH, 3); // Modifiqué el valor de suavizado
-imagefilter($image, IMG_FILTER_CONTRAST, -20); // Modifiqué el valor de contraste
 
-// Rotar la imagen
+imagefilter($image, IMG_FILTER_SMOOTH, 3); 
+imagefilter($image, IMG_FILTER_CONTRAST, -20); 
+
+
 $image = imagerotate($image, rand(-5, 5), $background_color); // Reduje el rango de rotación
 
-// Establecer el tipo de contenido de la imagen
 header('Content-Type: image/png');
 
-// Mostrar la imagen
 imagepng($image);
 
-// Liberar la memoria
 imagedestroy($image);
 ?>

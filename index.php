@@ -1,3 +1,18 @@
+<?php
+    session_start();
+   
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "proy";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Error de conexión: " . $conn->connect_error);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,24 +52,7 @@
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
-                            <?php
-session_start();
-// Verificar si el usuario está logeado
-
-// Conectar a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "proy";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
-
-
-?>
+                            
                             <!-- Menu Admin 
                               -->
                             <form style="margin-left: 80px;" class="d-flex" action="">
@@ -62,40 +60,37 @@ if ($conn->connect_error) {
                                 <button class="btn btn-outline-success" type="submit">Buscar</button>
                             </form>
                             <?php
+                                if (isset($_SESSION['usuario_logueado'])) {
+                                    $usuario_logueado = $_SESSION['usuario_logueado'];
+                            ?>
+                            <?php 
+                                $sql_admin = "SELECT admin FROM usuarios WHERE cuenta = '$usuario_logueado'";
+                                $result_admin = $conn->query($sql_admin);
 
-// Verificar si el usuario está logeado
-if (isset($_SESSION['usuario_logueado'])) {
-    $usuario_logueado = $_SESSION['usuario_logueado'];
-    ?>
-    <?php // Consulta SQL para obtener el estado de administrador del usuario
-$sql_admin = "SELECT admin FROM usuarios WHERE cuenta = '$usuario_logueado'";
-$result_admin = $conn->query($sql_admin);
-
-if ($result_admin->num_rows > 0) {
-    $row_admin = $result_admin->fetch_assoc();
-    $es_admin = $row_admin['admin'];
-    // administrador
-    $mensaje_bienvenida = $es_admin ? "Bienvenido Administrador, $usuario_logueado!" : "Bienvenido Usuario, $usuario_logueado!";
-    ?>
-    <p><?php echo $mensaje_bienvenida; ?></p>
-    <li class="nav-item dropdown" style="margin-right: 10px;">
-                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
-                                <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Altas</a>
-                                    <a class="dropdown-item" href="#">Bajas</a>
-                                    <a class="dropdown-item" href="#">Cambios</a>
-                                </div>
-                            </li>
+                                if ($result_admin->num_rows > 0) {
+                                    $row_admin = $result_admin->fetch_assoc();
+                                    $es_admin = $row_admin['admin'];
+                                    // administrador
+                                    $mensaje_bienvenida = $es_admin ? "Bienvenido Administrador, $usuario_logueado!" : "Bienvenido Usuario, $usuario_logueado!";
+                                ?>
+                                    <p><?php echo $mensaje_bienvenida; ?></p>
+                                    <li class="nav-item dropdown" style="margin-right: 10px;">
+                                    <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
+                                    <div class="dropdown-menu">    
+                                        <a class="dropdown-item" href="#">Altas</a>
+                                        <a class="dropdown-item" href="#">Bajas</a>
+                                        <a class="dropdown-item" href="#">Cambios</a>
+                                    </div>
+                                </li>
                             <?php
-                            } else {
-    // En caso de error, muestra un mensaje genérico
-    $mensaje_bienvenida = "Bienvenido, $usuario_logueado!";
-    ?><p><?php echo $mensaje_bienvenida; ?></p>
-    <?php
-}
+                                } else {
+                                $mensaje_bienvenida = "Bienvenido, $usuario_logueado!";
+                            ?><p><?php echo $mensaje_bienvenida; ?></p>
+                            <?php
+                                }
 
-?>
-    <li class="nav-item" style="margin-right: 5px;"><a href="Log_REG/log/cerrar_sesion.php" class="btn btn-outline-primary">Cerrar Sesion</a></li>
+                            ?>
+                             <li class="nav-item" style="margin-right: 5px;"><a href="Log_REG/log/cerrar_sesion.php" class="btn btn-outline-primary">Cerrar Sesion</a></li>
     
 <?php  } else {
     // Si el usuario no está logeado, redirigir a la página de inicio de sesión
