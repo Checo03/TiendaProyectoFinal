@@ -80,14 +80,6 @@ small{
 .Container-Login h1{
     text-align: center;
 }
-
-
-.Register-Button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
 .Register-Button button {
     padding: 10px;
     background-color: #007bff;
