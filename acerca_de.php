@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
 </head>
-<body>
+<body id="bodyAD">
     <header class="header">
         <nav class="navbar navbar-expand-lg fixed-top py-2">
             <div class="containerN">
@@ -54,7 +54,7 @@
     </header>
 
     <div class="contenedor-estiloAD">
-        <section>
+        <section id="sectionAD">
             <h2 id="h2AD"><i class="fa-solid fa-headphones fa-bounce"></i> ¿QUIÉNES SOMOS?</h2>
             <br>
             <p><b>"ES UN PROYECTO ESCOLAR"</b><br>Somos un equipo apasionado que ha convertido la fascinación por el sonido en un proyecto de vida. En nuestro rincón digital, nos dedicamos a compartir experiencias auditivas excepcionales. Desde la primera nota hasta el último acorde, estamos aquí para guiarte en un viaje sonoro único.
@@ -63,7 +63,7 @@
     </div>
     <br><br><br><br><br><br>
     <div class="contenedor-estiloAD">
-        <section>
+        <section id="sectionAD">
             <h2 id="h2AD"><i class="fa-solid fa-headphones fa-bounce"></i> NUESTRO EQUIPO</h2>
             <br>
             <p>En el corazón de nuestra tienda en línea de audífonos, existe un equipo apasionado y comprometido que trabaja incansablemente para brindarte una experiencia auditiva excepcional. Cada miembro de nuestro equipo comparte una conexión profunda con el mundo del sonido, fusionando conocimientos técnicos con una pasión innata para ofrecer lo mejor en tecnología de audio.</p>
@@ -105,7 +105,7 @@
     </div>
         <br><br><br><br><br>
         <div class="contenedor-estiloAD">
-            <section>
+            <section id="sectionAD">
                 <h2 id="h2AD"><i class="fa-solid fa-headphones fa-bounce"></i> VALORES DE LA EMPRESA</h2>
                 <br>
                 <p>Los valores que una empresa reflejan su ética, cultura y principios fundamentales. Y para nosotros, es muy importante que nuestros clientes se sientan cómodos e incluidos con nuestros productos, reflejando la importancia que son ellos para nosotros.</p>
@@ -121,7 +121,7 @@
         </ol>
     <br><br><br><br>
     <div style="border-radius: 50%; width: 50%;" class="contenedor-estiloAD">
-        <center><section>
+        <center><section id="sectionAD">
             <h2 id="h2AD">CONTÁCTANOS PARA MAYOR INFORMACIÓN</h2>
             <br>
             <center><a href="#" class="buttonAcercaD">CONTÁCTANOS </a> <i style="font-size: x-large;" class="fa-solid fa-arrow-pointer fa-beat"></i></center>
