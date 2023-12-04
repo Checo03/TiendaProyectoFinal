@@ -1,4 +1,4 @@
-
+<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 session_start();
 //cookies
@@ -14,7 +14,22 @@ if (empty($_POST['cuenta_correo']) || empty($_POST['password']) || empty($_POST[
 
 // CAPTCHA
 if ($_POST['captcha'] !== $_SESSION['captcha']) {
-    echo "<script>alert('El código CAPTCHA no es válido.'); window.location.href = 'log.php';</script>";
+    ?>
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        Swal.fire({
+            title: 'Captcha Incorrecto',
+            icon: 'error',
+        confirmButtonText: 'Aceptar'
+        }).then(() => {
+        console.log('Redirigiendo a login');
+        window.location.href = 'log.php';
+    });
+});
+</script>
+
+
+            <?php
     exit;
 }
 
@@ -48,8 +63,23 @@ if ($result->num_rows > 0) {
 
     if ($bloq == 1) {
         // La cuenta está bloqueada
-        echo "<script>alert('Su cuenta esta bloqueada. Puede recuperarla aun...'); window.location.href = 'recover_password.html';</script>";
-    exit;
+        ?>
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        Swal.fire({
+            title: 'Su cuenta esta bloqueada, Aun puede recuperarla',
+            icon: 'warning',
+        confirmButtonText: 'Recuperar'
+        }).then(() => {
+        console.log('Redirigiendo a recuperacion de contraseña');
+        window.location.href = 'recover_password.html';
+    });
+});
+</script>
+
+
+            <?php
+         exit;
     } elseif (password_verify($password, $hashed_password)) {
         // Contraseña válida, restablecer intentos fallidos
         $_SESSION['intentos_fallidos'] = 0;
@@ -68,14 +98,60 @@ if ($result->num_rows > 0) {
             // Bloquear la cuenta
             $sql_update = "UPDATE usuarios SET bloq = 1 WHERE cuenta = '$cuenta_correo'";
             $conn->query($sql_update);
+            ?>
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        Swal.fire({
+            title: 'Su cuenta ha sido bloqueada debido a múltiples intentos fallidos.',
+            icon: 'warning',
+        confirmButtonText: 'Recuperar'
+        }).then(() => {
+        console.log('Redirigiendo a recuperacion de contraseña');
+        window.location.href = 'recover_password.html';
+    });
+});
+</script>
 
-            echo "Su cuenta ha sido bloqueada debido a múltiples intentos fallidos.";
+
+            <?php
+
+           
         } else {
-            echo "Nombre de cuenta o contraseña incorrectos.";
+            ?>
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        Swal.fire({
+            title: 'Nombre de cuenta o contraseña incorrectos.',
+            icon: 'error',
+        confirmButtonText: 'Aceptar'
+        }).then(() => {
+        console.log('Redirigiendo a login');
+        window.location.href = 'log.php';
+        });
+        });
+        </script>
+        
+        
+            <?php
         }
     }
 } else {
-    echo "Nombre de cuenta o contraseña incorrectos.";
+    ?>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+Swal.fire({
+    title: 'Nombre de cuenta o contraseña incorrectos.',
+    icon: 'error',
+confirmButtonText: 'Aceptar'
+}).then(() => {
+console.log('Redirigiendo a login');
+window.location.href = 'log.php';
+});
+});
+</script>
+
+
+    <?php
 }
 
 // Cerrar la conexión a la base de datos
