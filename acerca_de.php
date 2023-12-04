@@ -7,6 +7,8 @@
     <link rel="shortcut icon" href="Media/favicon.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/0fe4f3447c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Estilos/AcercaEstilos.css">
+    <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
+    <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
 </head>
 <body>
     <header class="header">
