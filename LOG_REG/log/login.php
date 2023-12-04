@@ -54,7 +54,9 @@ $password = $_POST['password'];
 $sql = "SELECT * FROM usuarios WHERE cuenta = '$cuenta_correo'";
 
 $result = $conn->query($sql);
-
+if (!isset($_SESSION['intentos_fallidos'])) {
+    $_SESSION['intentos_fallidos'] = 0;
+}
 if ($result->num_rows > 0) {
     // Usuario encontrado
     $row = $result->fetch_assoc();
@@ -98,6 +100,7 @@ if ($result->num_rows > 0) {
             // Bloquear la cuenta
             $sql_update = "UPDATE usuarios SET bloq = 1 WHERE cuenta = '$cuenta_correo'";
             $conn->query($sql_update);
+            $_SESSION['intentos_fallidos'] = 0;
             ?>
             <script>
         document.addEventListener('DOMContentLoaded', function () {
