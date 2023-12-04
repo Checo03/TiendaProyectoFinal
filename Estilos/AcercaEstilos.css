@@ -15,6 +15,10 @@
     justify-content: center;
     margin: 0;
 }
+body#main-container .navbar{
+    background: #005B41 !important;
+}
+
 /*Estilos del carrusel*/
 .contenedor-estiloAD {
     display: flex;
@@ -25,7 +29,7 @@
     background-color: rgb(0, 53, 28);
     margin: 20px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.363);
-    border-radius: 10px;
+    border-radius: 50px;
     transition: box-shadow 0.3s ease-in-out;
     color: rgb(168, 168, 168);
 }
