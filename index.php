@@ -95,7 +95,7 @@
 <?php  } else {
     // Si el usuario no está logeado, redirigir a la página de inicio de sesión
     ?><li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="login.php" class="btn btn-outline-primary">Login</a></li>
-    <li class="nav-item" style="margin-right: 5px;"><a href="Log_REG/registro.html" class="btn btn-outline-primary">Registrarse</a></li>
+    <li class="nav-item" style="margin-right: 5px;"><a href="registrate.php" class="btn btn-outline-primary">Registrarse</a></li>
   <?php  
     
 }$conn->close();

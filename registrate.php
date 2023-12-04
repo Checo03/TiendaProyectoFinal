@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revolt Sound Studio</title>
-    <link rel="shortcut icon" href="Media/Img/Favicon/favicon.png" type="image/x-icon">
+    <title>Revolt Sound Studios</title>
     <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
-    <link rel="stylesheet" href="Estilos/LoginEstilos.css">
     <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
+    <link rel="stylesheet" href="Estilos/Registro.css">
 
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
@@ -15,7 +14,7 @@
     <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="Container-Header" style="background-color: #005B41;">
+<div class="Container-Header" style="background-color: #005B41;">
         <header class="header">
             <nav class="navbar navbar-expand-lg fixed-top py-2">
                 <div class="containerN">
@@ -58,81 +57,6 @@
             </nav>
         </header>
     </div>
-
-        <main>
-            <br><br><br>
-            <div class="login-container">
-                <form class="login-form">
-                    <h2>Login</h2>
-                    <br>
-                    <div class="form-group">
-                        <label for="username">Cuenta</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Cotraseña</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="captcha">Captcha</label>
-                        <img src="Back-Login/captcha.php" alt="Captcha">
-                        <input type="text" id="captcha" name="captcha" required >
-                        <br><br>
-                    </div>
-
-                    <div class="form-group remember-me">
-                        <div>
-                            <label for="rememberMe">Recuerdame</label>
-                            <input type="checkbox" id="rememberMe" name="rememberMe">
-                        </div>
-                    </div>
-
-                    <button type="submit">Login</button>
-
-                    <p class="register-link">Aun No Tienes Cuenta? <a href="#">Registrate</a></p>
-                </form>
-            </div>
-            
-        </main>
-        
-        
-        <div class="Container-Footer">
-            <footer>
-                    <div class="footer-content">
-                        <div class="contact-info">
-                            <h2>Información de Contacto</h2>
-                            <p><i class="fas fa-map-marker-alt"></i> Dirección: Aguascalientes MX</p>
-                            <p><i class="fas fa-phone"></i> Teléfono: +449-584-4979</p>
-                            <p><i class="fas fa-envelope"></i> Correo Electrónico: revoltstudio@empresa.com</p>
-                        </div>
-                        <div class="social-links">
-                            <h2>Síguenos en Redes Sociales</h2>
-                            <div class="icon-container">
-                                <span class="separator">|</span>
-                                <a href="https://www.facebook.com/emi.harrera"><i class="fab fa-facebook-f fa-lg"></i></a>
-                                <span class="separator">|</span>
-                                <a href="https://twitter.com/emiiherrerra_10"><i class="fab fa-twitter fa-lg"></i></a>
-                                <span class="separator">|</span>
-                                <a href="https://www.instagram.com/e.jherrera.10/"><i class="fab fa-instagram fa-lg"></i></a>
-                                <span class="separator">|</span>
-                                <a href="https://www.youtube.com"><i class="fab fa-youtube fa-lg"></i></a>
-                                <span class="separator">|</span>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="copyright">
-                        &copy; 2023 REVOLT-STUDIO| Todos los derechos reservados.
-                    </div>
-                    <div class="empresa2">
-                        <img src="Media/Img/logo_final.png" width="100"  alt="">
-                    </div>
-            </footer>
-        </div>
-    </div>
+    
 </body>
 </html>
