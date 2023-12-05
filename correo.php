@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPAuth = true;
         $mail->Username = 'CorreoFabiel@outlook.com';
         $mail->Password = 'holaquehace89';
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = 587;
+        $mail->SMTPSecure = 'tls';  // Cambiado a TLS
+        $mail->Port = 587;  // Puerto para TLS
  
         // Configura el remitente y el destinatario
         $mail->setFrom('CorreoFabiel@outlook.com', 'FabielOR');
