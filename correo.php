@@ -11,6 +11,7 @@ require 'PHPMailer/SMTP.php';
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST["nombre"];
+    $telefono = $_POST["telefono"];
     $email = $_POST["email"];
     $mensaje = $_POST["mensaje"];
  
@@ -34,7 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Contenido del correo
         $mail->isHTML(true);
         $mail->Subject = 'Nuevo mensaje del formulario';
-        $mail->Body    = "Nombre: $nombre<br>Correo electronico: $email<br><br>Mensaje: $mensaje";
+        $mail->Body    = "Nombre: $nombre<br>Correo electronico: $email<br><br> Telefono: $telefono<br><br>
+        Mensaje: $mensaje <br><br> Estamos analizando tu anterior mensaje para poder proporcionarte una respuesta concreta. 
+        Agradeceriamos tu comprension y paciencia, de antemano gracias!.<br>
+        Si gustas por el momento puedes checar nuestras nuevas ofertas para que no te pierdas los mejores
+        precios en los mejores productos.";
  
         // Enviar el correo
         $mail->send();
