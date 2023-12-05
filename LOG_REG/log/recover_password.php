@@ -1,3 +1,4 @@
+<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 
 $servername = "localhost";
@@ -26,7 +27,38 @@ if ($result->num_rows > 0) {
    
     header("Location: reset_password.php?correo=$correo_usuario&pregunta=$pregunta_seguridad&respuesta=$respuesta_correcta");
 } else {
-    echo "<p>Correo no encontrado. Inténtalo de nuevo.</p>";
+    ?>
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        Swal.fire({
+            title: 'Correo no encontrado. Inténtalo de nuevo',
+            icon: 'error',
+        confirmButtonText: 'Aceptar'
+        }).then(() => {
+        console.log('Redirigiendo....');
+        window.location.href = 'recover_password.php';
+        });
+        });
+        </script>
+        
+        
+            <?php
+     ?>
+     <script>
+ document.addEventListener('DOMContentLoaded', function () {
+ Swal.fire({
+     title: 'Correo no encontrado.',
+     icon: 'error',
+ confirmButtonText: 'Aceptar'
+ }).then(() => {
+ console.log('Redirigiendo...');
+ window.location.href = 'recover_password.php';
+ });
+ });
+ </script>
+ 
+ 
+     <?php
 }
 
 $conn->close();
