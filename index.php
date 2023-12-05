@@ -28,10 +28,8 @@
                             <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Ver Todo</a>
-                                    <a class="dropdown-item" href="#">Diademas</a>
-                                    <a class="dropdown-item" href="#">EarBuds</a>
-                                    <!--Lista De Marcas -->
+                                    <a class="dropdown-item" href="productos.php">Tienda</a>
+                                    
                                 </div>
                             </li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
@@ -41,9 +39,8 @@
                             <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Altas</a>
-                                    <a class="dropdown-item" href="#">Bajas</a>
-                                    <a class="dropdown-item" href="#">Cambios</a>
+                                    <a class="dropdown-item" href="altasProducto.php">Altas</a>
+                                    <a class="dropdown-item" href="adminProductos.php">Cambios y Bajas</a>
                                 </div>
                             </li>  -->
                             <form style="margin-left: 80px;" class="d-flex" action="">
