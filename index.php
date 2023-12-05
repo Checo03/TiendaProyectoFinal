@@ -43,13 +43,13 @@
                             <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="acerca_de.php">Ver Todo</a>
+                                    <a class="dropdown-item" href="productos.php">Ver Todo</a>
                                     <a class="dropdown-item" href="#">Diademas</a>
                                     <a class="dropdown-item" href="#">EarBuds</a>
                                     <!--Lista De Marcas -->
                                 </div>
                             </li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="ayuda.php" class="nav-link text-uppercase font-weight-bold">Ayuda</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="acerca_de.php" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
 
@@ -322,7 +322,7 @@
                                 </div>
                                 <div class="blog-info">
                                     <h5 ><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                    <p></p>
                                     <div class="btn-bar">
                                         <a href="#" class="px-btn-arrow">
                                             <span>Ver Oferta</span>
@@ -342,7 +342,7 @@
                                 </div>
                                 <div class="blog-info">
                                     <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                    <p></p>
                                     <div class="btn-bar">
                                         <a href="#" class="px-btn-arrow">
                                             <span>Ver Oferta</span>
@@ -362,7 +362,7 @@
                                 </div>
                                 <div class="blog-info">
                                     <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                                    <p></p>
                                     <div class="btn-bar">
                                         <a href="#" class="px-btn-arrow">
                                             <span>Ver Oferta</span>
