@@ -88,9 +88,8 @@
                                    <li class="nav-item dropdown" style="margin-right: 10px;">
                                        <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
                                        <div class="dropdown-menu">    
-                                           <a class="dropdown-item" href="#">Altas</a>
-                                           <a class="dropdown-item" href="#">Bajas</a>
-                                           <a class="dropdown-item" href="#">Cambios</a>
+                                       <a class="dropdown-item" href="altasProductos.php">Altas</a>
+                                           <a class="dropdown-item" href="adminProductos.php">Bajas</a>
                                        </div>
                                    </li>
                            <?php

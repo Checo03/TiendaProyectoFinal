@@ -30,7 +30,7 @@ imagefilter($image, IMG_FILTER_SMOOTH, 3);
 imagefilter($image, IMG_FILTER_CONTRAST, -20); 
 
 
-$image = imagerotate($image, rand(-5, 5), $background_color); // Reduje el rango de rotación
+$image = imagerotate($image, rand(-15, 15), $background_color); // Reduje el rango de rotación
 
 header('Content-Type: image/png');
 
