@@ -25,15 +25,7 @@
                     
                     <div id="navbarSupportedContent" class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-                            <li class="nav-item dropdown" style="margin-right: 10px;">
-                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
-                                <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Ver Todo</a>
-                                    <a class="dropdown-item" href="#">Diademas</a>
-                                    <a class="dropdown-item" href="#">EarBuds</a>
-                                    <!--Lista De Marcas -->
-                                </div>
-                            </li>
+                        <li class="nav-item" style="margin-right: 10px;"><a href="productos.php" class="nav-link text-uppercase font-weight-bold">Tienda</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
@@ -41,9 +33,8 @@
                             <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Altas</a>
-                                    <a class="dropdown-item" href="#">Bajas</a>
-                                    <a class="dropdown-item" href="#">Cambios</a>
+                                    <a class="dropdown-item" href="altasProducto.php">Altas</a>
+                                    <a class="dropdown-item" href="adminProductos.php">Cambios y Bajas</a>
                                 </div>
                             </li>  -->
                             <form style="margin-left: 80px;" class="d-flex" action="">
