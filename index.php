@@ -43,7 +43,7 @@
                             <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Ver Todo</a>
+                                    <a class="dropdown-item" href="acerca_de.php">Ver Todo</a>
                                     <a class="dropdown-item" href="#">Diademas</a>
                                     <a class="dropdown-item" href="#">EarBuds</a>
                                     <!--Lista De Marcas -->
@@ -423,4 +423,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
  
 </body>
-</html>

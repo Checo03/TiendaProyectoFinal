@@ -1,3 +1,4 @@
+
 <?php
     session_start();
    
@@ -44,7 +45,7 @@
                             <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Ver Todo</a>
+                                    <a class="dropdown-item" href="productos.php">Ver Todo</a>
                                     <a class="dropdown-item" href="#">Diademas</a>
                                     <a class="dropdown-item" href="#">EarBuds</a>
                                     <!--Lista De Marcas -->
@@ -53,7 +54,7 @@
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
-                            
+
                             <form style="margin-left: 80px;" class="d-flex" action="">
                                 <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
                                 <button class="btn btn-outline-success" type="submit">Buscar</button>
@@ -108,6 +109,9 @@
 }
 $conn->close();
 ?>  
+
+                            
+
                             <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>       
                         </ul>
                     </div>
