@@ -34,7 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Contenido del correo
         $mail->isHTML(true);
         $mail->Subject = 'Nuevo mensaje del formulario';
-        $mail->Body    = "Nombre: $nombre<br>Correo electronico: $email<br><br>Mensaje: $mensaje";
+        $mail->Body    = "Nombre: $nombre<br>Correo electronico: $email<br><br>Mensaje: $mensaje <br><br> Estamos procesando la información de tu petición. 
+        Tendremos que analizar profundamente el caso para proporcionar una respuesta. 
+        Por favor, sé paciente y espera.";
 
         // Enviar el correo
         $mail->send();
@@ -43,5 +45,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
         echo "ERROR!!! al enviar el mensaje: {$mail->ErrorInfo}";
     }
-}
-?>
