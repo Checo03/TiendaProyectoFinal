@@ -84,7 +84,10 @@
 .navbar .nav-item.dropdown .dropdown-item {
     color: #fff;
 }
-
+.Container-Inicio {
+    margin-top: 100px; /* Puedes ajustar este valor según tus necesidades */
+    margin-bottom: 20px; /* Agrega un espacio en la parte inferior */
+}
 .navbar .nav-item.dropdown .dropdown-item:hover {
     background-color: #007856; 
 }

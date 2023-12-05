@@ -1,0 +1,281 @@
+body .navbar{
+    color: white;
+    background-color: #005B41 !important ;
+}
+.container-fluid {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color:#F5F5DC;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+}
+
+.image-column img {
+    max-width: 100%;
+    height:650px;
+}
+
+.info-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* al usar column, con esto todos tienen la misma altura, hablando de los divs*/
+    margin-left: 20px;
+}
+.product-name {
+    font-size: 38px;
+    color: #94CDB7; 
+    margin-bottom: 10px;
+    font-weight: bold; 
+   
+}
+.product-info {
+    font-size: 23px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+}
+.product-desc {
+    font-size: 20px; 
+    line-height: 1.8; 
+    color: #333; 
+    margin-bottom: 15px; 
+    text-align: justify; 
+}
+.product-marca {
+    font-size: 23px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+    font-style: italic; 
+    font-weight: bold; 
+    
+}
+
+.product-info.price {
+    font-size: 26px;
+    font-weight: bold;
+    color:black;
+    transform: skew(-10deg); /* Inclina el texto en -10 grados */
+    letter-spacing: 2px; /*espaciado entre las letras*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /*sombra*/
+   
+}
+.product-info.priceTachado {
+    font-size: 26px;
+    font-weight: bold;
+    color:black;
+    transform: skew(-10deg); 
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    text-decoration: line-through;
+    margin-right:8px;
+}
+
+
+.product-info.discount {
+    font-size: 26px;
+    font-weight: bold;
+    transform: skew(-10deg); 
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    color: #e74c3c;
+}
+.product-info.ahorro {
+    font-size: 24px;
+    font-weight: bold;
+    transform: skew(-10deg);
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #27ae60; 
+    margin-top: 5px;
+}
+.contenedorPrecio {
+    display: flex;
+    justify-content: start;
+    margin-left:5px;
+}
+
+.highlights-column {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    flex: 1; /* mismo caso que el anterior*/
+}
+
+.infPago,
+.infEnvios,
+.infMeses,
+.infGarantia {
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.infPago i,
+.infEnvios i,
+.infMeses i,
+.infGarantia i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.infPago {
+    background-color:#30609C;
+}
+.infEnvios {
+    background-color:#27E6E6;
+    
+}
+.infGarantia {
+    background-color:#ECE509;
+    
+}
+.infMeses {
+    background-color:#14F82C;
+}
+
+.carritoShare {
+    display: flex;
+    align-items: center;
+}
+
+.carritoShare i {
+    font-size: 24px;
+    margin-right: 5px;
+    padding: 20px;
+}
+hr.lineaDivision {
+    border: none;
+    border-top: 2px solid #ccc; 
+    margin: 5px 0; 
+}
+.leyenda {
+    color:#3981DC;
+}
+
+.comments-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.comment-user {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.comment-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.comment-rating {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.comment-text {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.comment-form {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-group select {
+    font-size: 18px;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.form-group button {
+    display: inline-block;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #2980b9;
+    cursor:pointer;
+}
+
+.thumbnail-button {
+width: 120px;
+height: 120px;
+margin: 8px; 
+margin-top:25px;
+
+}
+
+.thumbnail-button img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: contain;
+    max-height: 100px; 
+    min-height: 100px
+}
+.breadcrumb {
+    font-size: 16px;
+    color: #555;
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: #3498db;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #2980b9;
+}
