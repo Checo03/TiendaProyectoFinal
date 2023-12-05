@@ -1,0 +1,83 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Helvetica', sans-serif;
+}
+body .navbar{
+    color: white;
+    background-color: #005B41 !important ;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color:#6A9C89;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+h2 {
+    color:white;
+    text-align: center;
+}
+
+form {
+    margin-top: 30px;
+}
+
+label {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('https://img.icons8.com/ios/452/down2.png') no-repeat right 10px center;
+    background-size: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.btn-primary {
+    background-color: wheat;
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+#montoDesc {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
