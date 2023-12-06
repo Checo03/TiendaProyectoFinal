@@ -1,4 +1,7 @@
+<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar datos del formulario
     $correo_usuario = $_POST['correo'];
@@ -29,15 +32,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Actualizar la contraseña y el campo 'bloq'
             $sql = "UPDATE usuarios SET password = '$password_hashed', bloq = 0 WHERE correo = '$correo_usuario'";
             $conn->query($sql);
+            ?>
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        Swal.fire({
+            title: 'Contraseña Restablecida con éxito',
+            icon: 'success',
+        confirmButtonText: 'Aceptar'
+        }).then(() => {
+        console.log('Redirigiendo a panel_control.php');
+        window.location.href = 'panel_control.php';
+    });
+});
+</script>
 
-            echo "<p>Contraseña restablecida con éxito.</p>";
 
+            <?php
             $conn->close();
         } else {
-            echo "<p>Las contraseñas no coinciden. Inténtalo de nuevo.</p>";
+            ?>
+            <script>
+document.addEventListener('DOMContentLoaded', function () {
+    Swal.fire({
+        title: 'Contraseñas No coinciden',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+    }).then(() => {
+        window.history.back();
+    });
+});
+</script>
+<?php
         }
     } else {
-        echo "<p>Respuesta incorrecta. Inténtalo de nuevo.</p>";
+        ?>
+        <script>
+document.addEventListener('DOMContentLoaded', function () {
+Swal.fire({
+    title: '>Respuesta incorrecta. Inténtalo de nuevo.',
+    icon: 'error',
+    confirmButtonText: 'Aceptar'
+}).then(() => {
+    window.history.back();
+});
+});
+</script>
+<?php
+       
     }
 }
 ?>
