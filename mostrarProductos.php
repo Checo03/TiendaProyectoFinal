@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 
 $servername = "localhost";
@@ -78,4 +78,4 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
->>>>>>> a71da378d61e4910c2ba0b359f1f525aca5d637d
+
