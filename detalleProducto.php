@@ -1,38 +1,6 @@
 <?php
-    session_start();
-   
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "proy";
+session_start();
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
-
-    $mensaje_bienvenida = ""; 
-    if (isset($_SESSION['usuario_logueado'])) {
-        $usuario_logueado = $_SESSION['usuario_logueado'];
-        $stmt = $conn->prepare("SELECT admin FROM usuarios WHERE cuenta = ?");
-        $stmt->bind_param("s", $usuario_logueado);
-        $stmt->execute();
-        $result_admin = $stmt->get_result();
-
-        if ($result_admin === false) {
-            die("Error de consulta: " . $conn->error);
-        }
-
-        $row_admin = $result_admin->fetch_assoc();
-        $admin_value = $row_admin['admin'];
-
-        if ($admin_value == 0) {
-            $mensaje_bienvenida = "Hola $usuario_logueado!";
-        } elseif ($admin_value == 1) {
-            $mensaje_bienvenida = "Hola admin $usuario_logueado!";
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +15,7 @@
     <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
     
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -55,68 +24,45 @@
 </head>
 <body>
 <div class="Container-Inicio">
-       
-<header class="header">
+        <header class="header">
             <nav class="navbar navbar-expand-lg fixed-top py-2">
                 <div class="containerN">
-                    <!-- Logo Imagen -->
-                    <a href="index.php" class="navbar-brand" style="margin-right:30px"><img src="Media/Img/logo_final.png" alt="LOGO" style="width: 70px;  height: 60px;"></a>
+                    <a href="index.php" class="navbar-brand"><img src="Media/Img/logo_final.png" alt="LOGO" style="width: 70px;  height: 60px;"></a>
                     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
-
+                    
                     <div id="navbarSupportedContent" class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-                            <!-- Tienda -->
-                            <li class="nav-item" style="margin-right: 10px;"><a href="productos.php" class="nav-link text-uppercase font-weight-bold">Tienda</a></li>
-
-                            <!-- Menu -->
-                            <li class="nav-item dropdown" style="margin-right: 30px;">
-                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
+                            <li class="nav-item dropdown" style="margin-right: 10px;">
+                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="acerca_de.php">Acerca De</a>
-                                    <a class="dropdown-item" href="ayuda.php">Ayuda</a>
-                                    <a class="dropdown-item" href="contactanos.php">Contactanos</a>
+                                    <a class="dropdown-item" href="productos.php">Tienda</a>
+                                    <!--Lista De Marcas -->
                                 </div>
                             </li>
-                            
-                            <!-- Sentencia Inicio Sesión -->
-                            <?php 
-                            if (isset($_SESSION['usuario_logueado'])) {
-                                if ($admin_value == 0) {
-                                    ?>
-                                    <!-- Mensaje Usuario -->
-                                    <li class="nav-item" style="margin-right: 10px; margin-left:10px"><p style="color: #ffffff;"><?php echo $mensaje_bienvenida; ?></p></li>
-                                    
-                                <?php } elseif ($admin_value == 1) { ?>
-
-                                     <!-- Menu Admin -->
-                                    <li class="nav-item dropdown" style="margin-right: 10px;">
-                                        <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
-                                        <div class="dropdown-menu">    
-                                            <a class="dropdown-item" href="altasProductos.php">Altas</a>
-                                            <a class="dropdown-item" href="eliminarPro.php">Bajas</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item" style="margin-right: 30px; margin-left:10px"><p style="color: #ffffff;"><?php echo $mensaje_bienvenida; ?></p></li>
-                                <?php } ?>
-                                <li class="nav-item" style="margin-right: 10px;"><a href="Log_REG/log/cerrar_sesion.php" class="btn btn-outline-primary">Cerrar Sesion</a></li>
-                            <?php } else { ?>
-                                <li class="nav-item" style="margin-right: 10px;"><a href="LOG_REG/log/log.php" class="btn btn-outline-primary">Login</a></li>
-                                <li class="nav-item" style="margin-right: 5px;"><a href="LOG_REG/registro.html" class="btn btn-outline-primary">Registrarse</a></li>
-                            <?php } ?>
-
+                            <li class="nav-item" style="margin-right: 10px;"><a href="ayuda.php" class="nav-link text-uppercase font-weight-bold">Ayuda</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="acerca_de.php" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
+                            <!-- Menu Admin 
+                            <li class="nav-item dropdown" style="margin-right: 10px;">
+                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
+                                <div class="dropdown-menu">    
+                                    <a class="dropdown-item" href="#">Altas</a>
+                                    <a class="dropdown-item" href="#">Bajas</a>
+                                    <a class="dropdown-item" href="#">Cambios</a>
+                                </div>
+                            </li>  -->
                             <form style="margin-left: 80px;" class="d-flex" action="">
                                 <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
                                 <button class="btn btn-outline-success" type="submit">Buscar</button>
                             </form>
-
-                            <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>
-
+                            <li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="LOG_REG/log/log.php" class="btn btn-outline-primary">Login</a></li>
+                            <li class="nav-item" style="margin-right: 5px;"><a href="#" class="btn btn-outline-primary">Registrarse</a></li>
+                            <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>       
                         </ul>
                     </div>
                 </div>
             </nav>
-        </header>
-
+        </header>  
         <br><br><br><br>
     <?php
     $servername = "localhost";
@@ -152,6 +98,7 @@
     }
 
     $imagen =$fila["imagen"];
+    echo $_SESSION['usuario_logueado'];
 
     ?>
     <br>
@@ -247,11 +194,11 @@
             ?>
             <p class="product-info"><span class="leyenda">Id del producto:</span> <?php echo $fila["id"]; ?></p>
             <p class="product-marca"><span class="leyenda">Marca: </span><?php echo $fila["marca"]; ?></p>
+            <?php $precioFinal=$fila["precio"]-$fila["montodesc"]; ?>
             <?php if ($fila["descuento"] == "si") { ?>
                 <div class="contenedorPrecio">
                 <p class="product-info priceTachado"><del>$<?php echo $fila["precio"]; ?></del></p>
                 <?php
-                $precioFinal=$fila["precio"]-$fila["montodesc"];
                 ?>
                 <p class="product-info discount">$<?php echo $precioFinal ?></p>
                 </div>
@@ -263,6 +210,14 @@
             <p class="product-info"><span class="leyenda">Disponibilidad en tienda: </span><?php echo $fila["cantidad"]; ?> piezas</p>
             <p class="product-info"><span class="leyenda">Color: </span><?php echo $fila["color"]; ?></p>
             <p class="product-conect"><span class="leyenda">Conectividad:</span> <?php echo $fila["conectividad"]; ?></p>
+            <p class="product-conect"><span class="leyenda">Cantidad:</span></p>
+            <form id="cartForm" action="carrito.php" method="get">
+            <div id="quantity-selector">
+                <button type="button" onclick="decreaseQuantity()">-</button>
+                <input type="text" id="quantity" name="cantidadS" value="1" readonly>
+                <button type="button" onclick="increaseQuantity()">+</button>
+            </div>
+           
             <hr class="lineaDivision">
             <b><p class="product-desc">Descripcion: </p></b>
             <p class="product-desc"><?php echo $fila["descripcion"]; ?></p>
@@ -286,11 +241,20 @@
             <i class="fa-solid fa-spinner fa-2xl"></i>
             </div>
             <br><br>
+            <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
+            <input type="hidden" name="precioFinal" value="<?php echo $precioFinal; ?>">
+            <?php
+            $usuario=$_SESSION['usuario_logueado'];
+            ?>
+            <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
             <div class="carritoShare">
-            <i class="fa-solid fa-cart-plus fa-2xl"></i><p><a href="#">Agregar al carrito</a></p>
-            <i class="fa-solid fa-share-nodes fa-2xl"></i><p>Compartir</p>
+                <i class="fa-solid fa-cart-plus fa-2xl"></i>
+                <button type="submit" class="btn btn-primary btn-ver-detalles">Agregar al carrito</button>
+                <i class="fa-solid fa-share-nodes fa-2xl"></i>
+                <p>Compartir</p>
             </div>
         </div>
+        </form>
     </div>
     <div class="comments-section">
         <h3>Comentarios</h3>
@@ -429,6 +393,20 @@
         document.getElementById('zoomify-image').src = nuevaImagen;
         
     }
+    function increaseQuantity() {
+      var quantityInput = document.getElementById('quantity');
+      var currentQuantity = parseInt(quantityInput.value, 10);
+      quantityInput.value = currentQuantity + 1;
+    }
+
+    function decreaseQuantity() {
+      var quantityInput = document.getElementById('quantity');
+      var currentQuantity = parseInt(quantityInput.value, 10);
+      
+      if (currentQuantity > 1) {
+        quantityInput.value = currentQuantity - 1;
+      }
+    }
 </script>
 <script src="js/NavMenu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -436,4 +414,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 </body>
 </html>
-
