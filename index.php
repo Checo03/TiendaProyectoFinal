@@ -109,7 +109,7 @@
                                 <button class="btn btn-outline-success" type="submit">Buscar</button>
                             </form>
 
-                            <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>
+                            <li class="nav-item" style="margin-left: 20px;"><a href="verCarrito.php" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>
 
                         </ul>
                     </div>
@@ -126,7 +126,9 @@
                         <h1>Revolt Sound Studios</h1>
                         <p>Siente la calidad en cada nota</p>
                         <br><br>
-                        <button>VER MAS</button>
+                        <form action="productos.php">
+                            <button>VER MAS</button>
+                        </form>
                     </div>
                 </div>
             </div> 
