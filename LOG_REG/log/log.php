@@ -1,4 +1,41 @@
 <?php
+    session_start();
+   
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "proy";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Error de conexión: " . $conn->connect_error);
+    }
+
+    $mensaje_bienvenida = ""; 
+    if (isset($_SESSION['usuario_logueado'])) {
+        $usuario_logueado = $_SESSION['usuario_logueado'];
+        $stmt = $conn->prepare("SELECT admin FROM usuarios WHERE cuenta = ?");
+        $stmt->bind_param("s", $usuario_logueado);
+        $stmt->execute();
+        $result_admin = $stmt->get_result();
+
+        if ($result_admin === false) {
+            die("Error de consulta: " . $conn->error);
+        }
+
+        $row_admin = $result_admin->fetch_assoc();
+        $admin_value = $row_admin['admin'];
+
+        if ($admin_value == 0) {
+            $mensaje_bienvenida = "Hola $usuario_logueado!";
+        } elseif ($admin_value == 1) {
+            $mensaje_bienvenida = "Hola admin $usuario_logueado!";
+        }
+    }
+?>
+
+<?php
 if (!empty($_POST["remember"])) {
     setcookie("cuenta_correo", $_POST["cuenta_correo"], time() + 3600);
     setcookie("password", $_POST["password"], time() + 3600);
@@ -11,6 +48,7 @@ if (!empty($_POST["remember"])) {
 <link rel="shortcut icon" href="../../Media/Img/Favicon/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="CabeceraEstilos.css">
 <link rel="stylesheet" href="../../Estilos/PiePaginaEstilos.css">
+<link rel="stylesheet" href="../../Estilos/LoginEstilos.css">
 
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
@@ -44,86 +82,128 @@ if (!empty($_POST["remember"])) {
 </head>
 <body>
 <div class="Container-Inicio">
-        <header class="header">
+<header class="header">
             <nav class="navbar navbar-expand-lg fixed-top py-2">
                 <div class="containerN">
-                    <a href="../../index.php" class="navbar-brand"><img src="../../Media/Img/logo_final.png" alt="LOGO" style="width: 70px;  height: 60px;"></a>
+                    <!-- Logo Imagen -->
+                    <a href="index.php" class="navbar-brand" style="margin-right:30px"><img src="../../Media/Img/logo.png" alt="LOGO" style="width: 70px;  height: 60px;"></a>
                     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
-                    
+
                     <div id="navbarSupportedContent" class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-                            <li class="nav-item dropdown" style="margin-right: 10px;">
-                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
+                            <!-- Tienda -->
+                            <li class="nav-item" style="margin-right: 10px;"><a href="productos.php" class="nav-link text-uppercase font-weight-bold">Tienda</a></li>
+
+                            <!-- Menu -->
+                            <li class="nav-item dropdown" style="margin-right: 30px;">
+                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Ver Todo</a>
-                                    <a class="dropdown-item" href="#">Diademas</a>
-                                    <a class="dropdown-item" href="#">EarBuds</a>
-                                    <!--Lista De Marcas -->
+                                    <a class="dropdown-item" href="acerca_de.php">Acerca De</a>
+                                    <a class="dropdown-item" href="ayuda.php">Ayuda</a>
+                                    <a class="dropdown-item" href="contactanos.php">Contactanos</a>
                                 </div>
                             </li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="../../contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
-                    
+                            
+                            <!-- Sentencia Inicio Sesión -->
+                            <?php 
+                            if (isset($_SESSION['usuario_logueado'])) {
+                                if ($admin_value == 0) {
+                                    ?>
+                                    <!-- Mensaje Usuario -->
+                                    <li class="nav-item" style="margin-right: 10px; margin-left:10px"><p style="color: #ffffff;"><?php echo $mensaje_bienvenida; ?></p></li>
+                                    
+                                <?php } elseif ($admin_value == 1) { ?>
+
+                                     <!-- Menu Admin -->
+                                    <li class="nav-item dropdown" style="margin-right: 10px;">
+                                        <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
+                                        <div class="dropdown-menu">    
+                                            <a class="dropdown-item" href="altasProductos.php">Altas</a>
+                                            <a class="dropdown-item" href="adminProductos.php">Bajas</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item" style="margin-right: 30px; margin-left:10px"><p style="color: #ffffff;"><?php echo $mensaje_bienvenida; ?></p></li>
+                                <?php } ?>
+                                <li class="nav-item" style="margin-right: 10px;"><a href="Log_REG/log/cerrar_sesion.php" class="btn btn-outline-primary">Cerrar Sesion</a></li>
+                            <?php } else { ?>
+                                <li class="nav-item" style="margin-right: 10px;"><a href="LOG_REG/log/log.php" class="btn btn-outline-primary">Login</a></li>
+                                <li class="nav-item" style="margin-right: 5px;"><a href="LOG_REG/registro.html" class="btn btn-outline-primary">Registrarse</a></li>
+                            <?php } ?>
+
                             <form style="margin-left: 80px;" class="d-flex" action="">
                                 <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
                                 <button class="btn btn-outline-success" type="submit">Buscar</button>
                             </form>
-                            <li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="#" class="btn btn-outline-primary">Login</a></li>
-                            <li class="nav-item" style="margin-right: 5px;"><a href="../registro.html" class="btn btn-outline-primary">Registrarse</a></li>
-                            <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>       
+
+                            <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>
+
                         </ul>
                     </div>
                 </div>
-           
             </nav>
-       
-        </header>   
+        </header>
+
     </div>  
-        </header> 
-    <div class="Container-Login">
-        <form class="Form-Login" action="login.php" method="post">
-            <h1>Iniciar Sesión</h1>
-            <div class="Form-Control">
-                <label for="cuenta_correo">Nombre de cuenta o Correo Electrónico:</label>
-                <input type="text" name="cuenta_correo" required value="<?php if (isset($_COOKIE["cuenta_correo"])) {echo $_COOKIE["cuenta_correo"];}?>">
-            </div>
+        
+        <div class="Container-Login">
+    <form class="Form-Login" action="login.php" method="post">
+        <h1>Iniciar Sesión</h1>
+        <div class="Form-Control">
+            <label for="cuenta_correo">Nombre de cuenta o Correo Electrónico:</label>
+            <input type="text" name="cuenta_correo" required value="<?php echo isset($_COOKIE["cuenta_correo"]) ? $_COOKIE["cuenta_correo"] : ''; ?>">
+        </div>
 
-            <div class="Form-Control">
-                <label for="password">Contraseña:</label>
-                <input type="password" name="password" required value="<?php if (isset($_COOKIE["password"])) {echo $_COOKIE["password"];}?>">
-            </div>
+        <div class="Form-Control">
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" required value="<?php echo isset($_COOKIE["password"]) ? $_COOKIE["password"] : ''; ?>">
+        </div>
 
-            <div class="Form-Control">
-                <label for="captcha">Captcha:</label>
-                <img src="captcha.php" alt="CAPTCHA">
-                <br>
-                <input type="text" name="captcha" required>
-            </div>
+        <div class="Form-Control">
+            <label for="captcha">Captcha:</label>
+            <img src="captcha.php" alt="CAPTCHA">
+            <br>
+            <input type="text" name="captcha" required>
+        </div>
 
-            <div class="Form-Control">
-                <label for="remember">Recordar sesión:</label>
-                <input type="checkbox" name="remember" id="remember">
-            </div>
+        <div class="Form-Control">
+            <label for="remember">Recordar sesión:</label>
+            <input type="checkbox" name="remember" id="remember">
+        </div>
 
-            <script>
+        <script>
             // Obtener la referencia al elemento de la casilla de verificación
             var checkbox = document.getElementById("remember");
 
             // Verificar si la cookie existe
-            if (document.cookie.indexOf("password") !== -1) {
+            var passwordCookie = getCookie("password");
+            if (passwordCookie !== "") {
                 // Marcar la casilla si la cookie existe
                 checkbox.checked = true;
             }
-            </script>
-            <div class="row">
-                <button onclick="window.location.href='../registro.html'" style="margin-left: 100px;">¿No tienes cuenta? Regístrate</button>
-                <button type="submit" style="margin-left: 100px;">Iniciar Sesión</button>
-            </div>
-        </form>
 
-        
-    </div>
+            // Función para obtener el valor de una cookie por nombre
+            function getCookie(cookieName) {
+                var name = cookieName + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var cookieArray = decodedCookie.split(';');
+                for (var i = 0; i < cookieArray.length; i++) {
+                    var cookie = cookieArray[i].trim();
+                    if (cookie.indexOf(name) === 0) {
+                        return cookie.substring(name.length, cookie.length);
+                    }
+                }
+                return "";
+            }
+            
+        </script>
+
+        <div class="row">
+            <button onclick="window.location.href='../registro.html'" style="margin-left: 100px;">¿No tienes cuenta? Regístrate</button>
+            <button type="submit" style="margin-left: 100px;">Iniciar Sesión</button>
+        </div>
+    </form>
+</div>
+
     <div class="Container-Footer">
         <footer>
                 <div class="footer-content">

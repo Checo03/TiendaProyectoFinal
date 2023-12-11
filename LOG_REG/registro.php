@@ -1,3 +1,4 @@
+<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -25,7 +26,22 @@ $verificar_duplicados = "SELECT * FROM proy.usuarios WHERE cuenta='$cuenta' OR c
 $resultado = $conn->query($verificar_duplicados);
 
 if ($resultado->num_rows > 0) {
-    echo "Error: El nombre de usuario o correo electrónico ya están registrados";
+    ?>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+Swal.fire({
+    title: 'No se puede volver a Regisrar ese Nombre de cuenta o correo ya registrados',
+    icon: 'error',
+confirmButtonText: 'Aceptar'
+}).then(() => {
+console.log('Redirigiendo a Introducir los datos de nuevo');
+window.location.href = 'registro.html';
+});
+});
+</script>
+
+
+    <?php
 } else {
     
     $clave_acceso = isset($_POST['clave_acceso']) ? $_POST['clave_acceso'] : '';
@@ -39,20 +55,65 @@ if ($resultado->num_rows > 0) {
             $sql = "INSERT INTO proy.usuarios (nombre, cuenta, correo, pregunta, respuesta, password, admin, bloq) VALUES ('$nombre', '$cuenta', '$correo', '$pregunta', '$respuesta', '$password', '$admin', '$bloq')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "Registro exitoso";
+                ?>
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        Swal.fire({
+            title: 'Registro exitoso',
+            icon: 'success',
+        confirmButtonText: 'Aceptar'
+        }).then(() => {
+        console.log('Redirigiendo a Login');
+        window.location.href = 'log/log.php';
+        });
+        });
+        </script>
+        
+        
+            <?php
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
         } else {
-            echo "Error: Clave de acceso incorrecta. No se ha registrado el usuario.";
-        }
+            ?>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+Swal.fire({
+    title: 'Clave de acceso incorrecta. No se ha registrado el usuario.',
+    icon: 'error',
+confirmButtonText: 'Aceptar'
+}).then(() => {
+console.log('Redirigiendo a Registro...');
+window.location.href = 'registro.html';
+});
+});
+</script>
+
+
+    <?php
+              }
     } else {
         
         $sql = "INSERT INTO proy.usuarios (nombre, cuenta, correo, pregunta, respuesta, password, admin, bloq) VALUES ('$nombre', '$cuenta', '$correo', '$pregunta', '$respuesta', '$password', '$admin', '$bloq')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Registro exitoso";
-            header("Location: log/log.php");
+            ?>
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        Swal.fire({
+            title: 'Registro exitoso',
+            icon: 'success',
+        confirmButtonText: 'Aceptar'
+        }).then(() => {
+        console.log('Redirigiendo a Login');
+        window.location.href = 'log/log.php';
+        });
+        });
+        </script>
+        
+        
+            <?php
+            
             exit();
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
