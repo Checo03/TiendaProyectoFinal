@@ -6,8 +6,11 @@
 
     $busqueda = isset($_POST['campo']) ? $_POST['campo'] : '';
 
+    $promo = false;
+
     if(empty($busqueda)){
         $busqueda = isset($_GET['marca']) ? $_GET['marca'] : '';
+        $promo = true;
     }
 
     $sql = "SELECT * FROM productos WHERE LOWER(nombre) LIKE LOWER('%$busqueda%') OR LOWER(marca) LIKE LOWER('%$busqueda%') OR LOWER(categoria) LIKE LOWER('%$busqueda%') OR LOWER(color) LIKE LOWER('%$busqueda%')";
@@ -61,14 +64,24 @@
     <main>
         <?php if($result){ //Comprueba Si Existe La Base De Datos 
 
-            if(mysqli_num_rows($result) > 0){ //Ve Si Encontro Resultados ?>
+            if(mysqli_num_rows($result) > 0){ //Ve Si Encontro Resultados 
+                    if($promo){ ?>    
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <h2><b>Checa Nuestros Productos</b></h2>
+                            <br>
+                        </div>
+                    </div>
+                <?php }else{ ?>
+
                     <div class="row justify-content-center">
                         <div class="col-md-4">
                             <h2><b>Resultados Para:  </b><?php echo htmlspecialchars($busqueda) ?></h1>
                             <br>
                         </div>
                     </div>
-                <?php
+
+                <?php } 
                 echo '<div class="row row-cols-1 row-cols-md-4 g-4">';
                 while ($row = $result->fetch_assoc()) {
                     
