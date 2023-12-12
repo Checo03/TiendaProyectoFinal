@@ -1,52 +1,19 @@
 <?php
     session_start();
    
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "proy";
+   include("../../ConfigBD/configSesion.php");
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
+    if (!empty($_POST["remember"])) {
+        setcookie("cuenta_correo", $_POST["cuenta_correo"], time() + 3600);
+        setcookie("password", $_POST["password"], time() + 3600);
     }
-
-    $mensaje_bienvenida = ""; 
-    if (isset($_SESSION['usuario_logueado'])) {
-        $usuario_logueado = $_SESSION['usuario_logueado'];
-        $stmt = $conn->prepare("SELECT admin FROM usuarios WHERE cuenta = ?");
-        $stmt->bind_param("s", $usuario_logueado);
-        $stmt->execute();
-        $result_admin = $stmt->get_result();
-
-        if ($result_admin === false) {
-            die("Error de consulta: " . $conn->error);
-        }
-
-        $row_admin = $result_admin->fetch_assoc();
-        $admin_value = $row_admin['admin'];
-
-        if ($admin_value == 0) {
-            $mensaje_bienvenida = "Hola $usuario_logueado!";
-        } elseif ($admin_value == 1) {
-            $mensaje_bienvenida = "Hola admin $usuario_logueado!";
-        }
-    }
-?>
-
-<?php
-if (!empty($_POST["remember"])) {
-    setcookie("cuenta_correo", $_POST["cuenta_correo"], time() + 3600);
-    setcookie("password", $_POST["password"], time() + 3600);
-}
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <link rel="shortcut icon" href="../../Media/Img/Favicon/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="CabeceraEstilos.css">
+<link rel="stylesheet" href="../../Estilos/CabeceraEstilos.css">
 <link rel="stylesheet" href="../../Estilos/PiePaginaEstilos.css">
 <link rel="stylesheet" href="../../Estilos/LoginEstilos.css">
 
@@ -81,68 +48,13 @@ if (!empty($_POST["remember"])) {
     <title>Iniciar Sesión</title>
 </head>
 <body>
-<div class="Container-Inicio">
-<header class="header">
-            <nav class="navbar navbar-expand-lg fixed-top py-2">
-                <div class="containerN">
-                    <!-- Logo Imagen -->
-                    <a href="index.php" class="navbar-brand" style="margin-right:30px"><img src="../../Media/Img/logo.png" alt="LOGO" style="width: 70px;  height: 60px;"></a>
-                    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+    
 
-                    <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                        <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-                            <!-- Tienda -->
-                            <li class="nav-item" style="margin-right: 10px;"><a href="productos.php" class="nav-link text-uppercase font-weight-bold">Tienda</a></li>
 
-                            <!-- Menu -->
-                            <li class="nav-item dropdown" style="margin-right: 30px;">
-                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
-                                <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="acerca_de.php">Acerca De</a>
-                                    <a class="dropdown-item" href="ayuda.php">Ayuda</a>
-                                    <a class="dropdown-item" href="contactanos.php">Contactanos</a>
-                                </div>
-                            </li>
-                            
-                            <!-- Sentencia Inicio Sesión -->
-                            <?php 
-                            if (isset($_SESSION['usuario_logueado'])) {
-                                if ($admin_value == 0) {
-                                    ?>
-                                    <!-- Mensaje Usuario -->
-                                    <li class="nav-item" style="margin-right: 10px; margin-left:10px"><p style="color: #ffffff;"><?php echo $mensaje_bienvenida; ?></p></li>
-                                    
-                                <?php } elseif ($admin_value == 1) { ?>
-
-                                     <!-- Menu Admin -->
-                                    <li class="nav-item dropdown" style="margin-right: 10px;">
-                                        <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
-                                        <div class="dropdown-menu">    
-                                            <a class="dropdown-item" href="altasProductos.php">Altas</a>
-                                            <a class="dropdown-item" href="adminProductos.php">Bajas</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item" style="margin-right: 30px; margin-left:10px"><p style="color: #ffffff;"><?php echo $mensaje_bienvenida; ?></p></li>
-                                <?php } ?>
-                                <li class="nav-item" style="margin-right: 10px;"><a href="Log_REG/log/cerrar_sesion.php" class="btn btn-outline-primary">Cerrar Sesion</a></li>
-                            <?php } else { ?>
-                                <li class="nav-item" style="margin-right: 10px;"><a href="LOG_REG/log/log.php" class="btn btn-outline-primary">Login</a></li>
-                                <li class="nav-item" style="margin-right: 5px;"><a href="LOG_REG/registro.html" class="btn btn-outline-primary">Registrarse</a></li>
-                            <?php } ?>
-
-                            <form style="margin-left: 80px;" class="d-flex" action="">
-                                <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
-                                <button class="btn btn-outline-success" type="submit">Buscar</button>
-                            </form>
-
-                            <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>
-
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
+    <div class="Container-Inicio">
+        <?php include("Cabeceraloh.php"); ?>
+    
+        <br><br><br><br>
     </div>  
         
         <div class="Container-Login">
@@ -235,7 +147,7 @@ if (!empty($_POST["remember"])) {
                     &copy; 2023 REVOLT-STUDIO| Todos los derechos reservados.
                 </div>
                 <div class="empresa2">
-                    <img src="Media/Img/logo_final.png" width="100"  alt="">
+                    <img src="../../Media/Img/logo_final.png" width="100"  alt="">
                 </div>
         </footer>
     </div>

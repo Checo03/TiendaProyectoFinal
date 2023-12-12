@@ -10,7 +10,6 @@
         die("Error de conexión: " . $conn->connect_error);
     }
 
-    include 'ConfigBD/configAudi.php';
 
     $mensaje_bienvenida = ""; 
     if (isset($_SESSION['usuario_logueado'])) {
