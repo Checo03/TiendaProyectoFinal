@@ -1,8 +1,16 @@
 <?php
-    session_start();
+    session_start();    
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "audifonos";
 
-    include 'ConfigBD/configAudi.php';
-    include 'ConfigBD/configSesion.php';
+    $connAudi = new mysqli($servername, $username, $password, $dbname);
+
+
+    if ($connAudi->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
+    }
 
     $busqueda = isset($_POST['campo']) ? $_POST['campo'] : '';
 
@@ -59,7 +67,10 @@
     </style>
 </head>
 <body>
-    <?php include("Cabecera.php"); ?>
+    <?php 
+        include("ConfigBD/configSesion.php");
+
+        include("Cabecera.php"); ?>
     <br> <br> <br> <br> <br>
     <main>
         <?php if($result){ //Comprueba Si Existe La Base De Datos 

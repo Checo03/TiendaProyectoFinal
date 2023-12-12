@@ -11,18 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revolt Sound Studios</title>
     <link rel="shortcut icon" href="Media/Img/Favicon/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link rel="stylesheet" href="Estilos/InicioEstiloss.css">
     <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
 
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>
+    <?php include("ConfigBD/configCabecera.html"); ?>
 
 </head>
 <body>
     <div class="Container-Inicio">
+
 
         <?php include "Cabecera.php" ?>
 
@@ -34,7 +31,9 @@
                         <h1>Revolt Sound Studios</h1>
                         <p>Siente la calidad en cada nota</p>
                         <br><br>
-                        <button>VER MAS</button>
+                        <form action="productos.php">
+                            <button>VER MAS</button>
+                        </form>
                     </div>
                 </div>
             </div> 
@@ -330,7 +329,11 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
- 
+    
+
+    <!-- Actualiar Carrito -->
+    
+    
 </body>
 
 </html>
