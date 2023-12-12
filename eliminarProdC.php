@@ -15,20 +15,21 @@ $bd = 'audifonos';
 
 $conexion = new mysqli($servidor, $cuenta, $password, $bd);
 
-if ($conexion->connect_errno) {
-    die('Error en la conexión');
+if ($conexion->connect_error) {
+    die('Error en la conexion');
 }
 if (isset($_GET['nombreActP']) && isset($_GET['cantidadA'])  && isset($_GET['cantidadBorrarP'])) {
     
     $nombrePro=$_GET["nombreActP"];
     $cantidadA=$_GET["cantidadA"];
     $cantidadN=$_GET["cantidadBorrarP"];
+    $usuarioA=$_GET["usuarioA"];
     echo "Nombre: $nombrePro<br>";
     echo "Cantidad: $cantidadA";
     echo "Cantidad: $cantidadN";
     if($cantidadA>$cantidadN) {
         $diferenciaB=$cantidadA-$cantidadN;
-        $sqlBorrar = "DELETE FROM carrito WHERE nombre='$nombrePro' LIMIT $diferenciaB";
+        $sqlBorrar = "DELETE FROM carrito WHERE nombre='$nombrePro' AND usuario='$usuarioA' LIMIT $diferenciaB";
        if($conexion->query($sqlBorrar)) {
         echo '<script>
                 Swal.fire({
@@ -60,7 +61,7 @@ if (isset($_GET['nombreActP']) && isset($_GET['cantidadA'])  && isset($_GET['can
     $precioF=$_GET["precioFA"];
     $imagenPS=$_GET["imagenA"];
     for($i=0; $i<$diferenciaN; $i++) {
-        $sqlC = "INSERT INTO carrito (nombre, descripcion, precioSD, precioF, imagen) VALUES ('$nombrePro', '$descripcionP', $precioSN, $precioF,'$imagenPS')";
+        $sqlC = "INSERT INTO carrito (nombre, descripcion, precioSD, precioF, imagen, usuario) VALUES ('$nombrePro', '$descripcionP', $precioSN, $precioF,'$imagenPS', '$usuarioA')";
         $conexion->query($sqlC);
         if($i==$diferenciaN-1) {
             echo '<script>
@@ -78,7 +79,7 @@ if (isset($_GET['nombreActP']) && isset($_GET['cantidadA'])  && isset($_GET['can
 
     
 }else {
-    $sqlBorrar = "DELETE FROM carrito WHERE nombre='$nombrePro'";
+    $sqlBorrar = "DELETE FROM carrito WHERE nombre='$nombrePro' AND usuario='$usuarioA'";
        if($conexion->query($sqlBorrar)) {
         echo '<script>
                 Swal.fire({
