@@ -8,7 +8,7 @@
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-    color: #232D3F;
+    color: #005B41;
     text-decoration: none;
 }
 
@@ -84,7 +84,10 @@
 .navbar .nav-item.dropdown .dropdown-item {
     color: #fff;
 }
-
+.Container-Inicio {
+    margin-top: 100px; /* Puedes ajustar este valor según tus necesidades */
+    margin-bottom: 20px; /* Agrega un espacio en la parte inferior */
+}
 .navbar .nav-item.dropdown .dropdown-item:hover {
     background-color: #007856; 
 }
