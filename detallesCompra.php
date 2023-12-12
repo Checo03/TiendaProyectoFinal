@@ -1,4 +1,8 @@
 <?php
+    session_start();
+
+    include("ConfigBD/configSesion.php");
+
 if(isset($_GET["usuario"]) && isset($_GET["totalCompra"])) {
     $usuarioL=$_GET["usuario"];
     $compraSI=$_GET["totalCompra"];
@@ -20,11 +24,25 @@ if(isset($_GET["usuario"]) && isset($_GET["totalCompra"])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/1d06ada3de.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Estilos/estilosDetalleC.css">
-    <title>Página de Destino</title>
+    <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
+    
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>
+    <title>Revolt Sound Studio</title>
+
+    <style>
+        body .navbar{
+            background: #005B41 !important;
+        }
+    </style>
 
 </head>
 <body>
 
+    <?php include("Cabecera.php") ?>
+    <br> <br> <br>
 <div class="container">
     <h2 class="text-center mt-4 mb-4">Proceso de Compra</h2>
 

@@ -15,19 +15,7 @@
     $usuarioL=$_SESSION['usuario_logueado'];
 
     
-    /*
-    $sql = "SELECT nombre, descripcion, precioSD, precioF, imagen, COUNT(*) as cantidad FROM carrito WHERE usuario='$usuarioL' GROUP BY nombre";
-    
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        $totalPrecio = 0;
-
-        $totalPrecio += $subtotal;
-        $totalSub+=$subTotalSD;
-    }
-    $montoDescuento=$totalSub-$totalPrecio;
-    */
-    $auxPrecio=1200;
+    include("procesarCompra.php");
 
     //Fecha de Caducidad del Codigo
     function FechaCaducidad(){
@@ -78,7 +66,7 @@
     // Total A Pagar
     $pdf->Ln(90);
     $pdf->SetFont('Arial', '', 18);
-    $pdf->Cell(0, 10, 'Total A Pagar: $'. number_format($precio, 2), 0, 1, 'L');
+    $pdf->Cell(0, 10, 'Total A Pagar: $'. number_format($compraSI, 2), 0, 1, 'L');
     // Fecha de Caducidad
     $pdf->Cell(0, 10, 'Fecha De Caducidad: '. FechaCaducidad(), 0, 1, 'L');
     
