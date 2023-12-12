@@ -11,14 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revolt Sound Studios</title>
     <link rel="shortcut icon" href="Media/Img/Favicon/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link rel="stylesheet" href="Estilos/InicioEstiloss.css">
     <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
 
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>
+    <?php include("ConfigBD/configCabecera.html"); ?>
 
 </head>
 <body>
@@ -337,35 +333,7 @@
 
     <!-- Actualiar Carrito -->
     
-    <script>
-        // Función para actualizar el número en el favicon
-        function updateFavicon(number) {
-            var favicon = document.querySelector('link[rel="icon"]');
-            favicon.href = 'favicon.png'; // Cambia esto con la ruta correcta a tu favicon base
-            var canvas = document.createElement("canvas");
-            canvas.width = 32;
-            canvas.height = 32;
-
-            var context = canvas.getContext("2d");
-            context.drawImage(favicon, 0, 0, 32, 32); // Copiar el favicon base
-            context.fillStyle = "#ff0000"; // Color del fondo (puedes personalizarlo)
-            context.beginPath();
-            context.arc(25, 7, 7, 0, 2 * Math.PI);
-            context.fill();
-            context.fillStyle = "#ffffff"; // Color del texto (puedes personalizarlo)
-            context.font = "bold 10px Arial";
-            context.textAlign = "center";
-            context.textBaseline = "middle";
-            context.fillText(number, 25, 7);
-
-            // Actualizar el favicon
-            favicon.href = canvas.toDataURL();
-        }
-
-        // Ejemplo de cómo usar la función para actualizar el número en el favicon
-        var numberOfProducts = 5; // Reemplaza esto con el número real de productos en el carrito
-        updateFavicon(numberOfProducts);
-    </script>
+    
 </body>
 
 </html>

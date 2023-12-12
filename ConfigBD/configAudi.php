@@ -4,10 +4,10 @@
     $password = "";
     $dbname = "audifonos";
 
-    $connAudi = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
 
-    if ($connAudi->connect_error) {
+    if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
