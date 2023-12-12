@@ -48,18 +48,18 @@
                     <ul>
                         <li>
                             <div class="image_title">
-                                <a href="#">Audífonos Gamer Inalámbricos - Blancos</a>
+                                <a href="resultadoBusqueda.php?marca=Tune">Audifonos JBL Tune - Blancos</a>
                             </div>
-                            <a href="#">
-                                <img style="height: 400px; width: 685px;" src="Media/Img/Contactanos/promos/audif.jpg"/>
+                            <a href="resultadoBusqueda.php?marca=Tune">
+                                <img style="height: 400px; width: 685px;" src="Media/Img/Contactanos/promos/JBLTune.jpg"/>
                             </a>
                         </li>
                         <li>
                             <div class="image_title">
-                                <a href="#">Audífonos Gamer Inalámbricos - Morados</a>
+                                <a href="resultadoBusqueda.php?marca=Tercera">AirPods Tercera Generacion</a>
                             </div>
-                            <a href="#">
-                                <img style="height: 400px; width: 890px;" src="Media/Img/Contactanos/promos/audiff2.jpeg">
+                            <a href="resultadoBusqueda.php?marca=Tercera">
+                                <img style="height: 400px; width: 890px;" src="Media/Img/Contactanos/promos/AirPodsPromo.jpg">
                             </a>
                         </li>
                         <li>
@@ -97,20 +97,19 @@
                 </div>
                 <div class="Categorias" style="margin-bottom: 50px;">
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Apple">
                             <img src="Media/Img/Inicio/apple_marca2.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Apple</div>
-
                         </a>
                     </div>
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=JBL">
                             <img src="Media/Img/Inicio/jbl_marca.jpg" class="Img-Cat">
                             <div class="Text-Categoria">JBL</div>
                         </a>
                     </div>
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Sony">
                             <img src="Media/Img/Inicio/sony_marca.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Sony</div>
                         </a>
@@ -118,20 +117,20 @@
                 </div>
                 <div class="Categorias">
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Bose">
                             <img src="Media/Img/Inicio/bose_marcas.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Bose</div>
 
                         </a>
                     </div>
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Sennheiser">
                             <img src="Media/Img/Inicio/sennheiser_marca.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Sennheiser</div>
                         </a>
                     </div>
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Huawei">
                             <img src="Media/Img/Inicio/huawei_marca.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Huawei</div>
                         </a>

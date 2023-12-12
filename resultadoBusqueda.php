@@ -6,6 +6,10 @@
 
     $busqueda = isset($_POST['campo']) ? $_POST['campo'] : '';
 
+    if(empty($busqueda)){
+        $busqueda = isset($_GET['marca']) ? $_GET['marca'] : '';
+    }
+
     $sql = "SELECT * FROM productos WHERE LOWER(nombre) LIKE LOWER('%$busqueda%') OR LOWER(marca) LIKE LOWER('%$busqueda%') OR LOWER(categoria) LIKE LOWER('%$busqueda%') OR LOWER(color) LIKE LOWER('%$busqueda%')";
 
 
