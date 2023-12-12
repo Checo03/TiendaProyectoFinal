@@ -1,38 +1,7 @@
 <?php
     session_start();
    
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "proy";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
-
-    $mensaje_bienvenida = ""; 
-    if (isset($_SESSION['usuario_logueado'])) {
-        $usuario_logueado = $_SESSION['usuario_logueado'];
-        $stmt = $conn->prepare("SELECT admin FROM usuarios WHERE cuenta = ?");
-        $stmt->bind_param("s", $usuario_logueado);
-        $stmt->execute();
-        $result_admin = $stmt->get_result();
-
-        if ($result_admin === false) {
-            die("Error de consulta: " . $conn->error);
-        }
-
-        $row_admin = $result_admin->fetch_assoc();
-        $admin_value = $row_admin['admin'];
-
-        if ($admin_value == 0) {
-            $mensaje_bienvenida = "Hola $usuario_logueado!";
-        } elseif ($admin_value == 1) {
-            $mensaje_bienvenida = "Hola admin $usuario_logueado!";
-        }
-    }
+    include 'ConfigBD/configSesion.php';
 ?>
 
 
@@ -42,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Productos</title>
+    <title>Revolt Sound Studio</title>
     <link rel="stylesheet" href="Estilos/estilosMenuProd.css">
     <link rel="shortcut icon" href="Media/Img/Favicon/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
@@ -116,13 +85,13 @@
                 </div>
             </nav>
         </header>
+        <br><br><br>
 
-<?php
-echo '<br><br><br>';
-echo ' <div class="busquedaCat">
-        <div class="row justify-content-end">
+
+        <div class="busquedaCat">
+        <div class="row justify-content-center">
             <div class="col-md-4">
-                <form action="' . $_SERVER['PHP_SELF'] . '" method="post" class="bg-light p-4 rounded">
+                <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="bg-light p-4 rounded">
                     <div class="mb-3">
                         <label for="categoriaS" class="form-label">Filtrar por categoría:</label>
                         <select class="form-select" id="categoriaS" name="categoriaS">
@@ -135,8 +104,8 @@ echo ' <div class="busquedaCat">
                 </form>
             </div>
         </div>
-        </div>';
-
+        </div>
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -148,6 +117,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
+
 if(isset($_POST["categoriaF"])) {
     $filtrarC=$_POST["categoriaS"];
     if($filtrarC=="earbuds") {
