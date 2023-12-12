@@ -1,38 +1,7 @@
 <?php
     session_start();
    
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "proy";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
-
-    $mensaje_bienvenida = ""; 
-    if (isset($_SESSION['usuario_logueado'])) {
-        $usuario_logueado = $_SESSION['usuario_logueado'];
-        $stmt = $conn->prepare("SELECT admin FROM usuarios WHERE cuenta = ?");
-        $stmt->bind_param("s", $usuario_logueado);
-        $stmt->execute();
-        $result_admin = $stmt->get_result();
-
-        if ($result_admin === false) {
-            die("Error de consulta: " . $conn->error);
-        }
-
-        $row_admin = $result_admin->fetch_assoc();
-        $admin_value = $row_admin['admin'];
-
-        if ($admin_value == 0) {
-            $mensaje_bienvenida = "Hola $usuario_logueado!";
-        } elseif ($admin_value == 1) {
-            $mensaje_bienvenida = "Hola admin $usuario_logueado!";
-        }
-    }
+    include 'ConfigBD/configSesion.php';
 ?>
 
 <!DOCTYPE html>
@@ -104,8 +73,8 @@
                                 <li class="nav-item" style="margin-right: 5px;"><a href="LOG_REG/registro.html" class="btn btn-outline-primary">Registrarse</a></li>
                             <?php } ?>
 
-                            <form style="margin-left: 80px;" class="d-flex" action="">
-                                <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
+                            <form style="margin-left: 80px;" class="d-flex" action="resultadoBusqueda.php" method="post">
+                                <input name="campo" class="form-control mr-2" type="text" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
                                 <button class="btn btn-outline-success" type="submit">Buscar</button>
                             </form>
 
@@ -426,3 +395,9 @@
  
 </body>
 
+</html>
+
+<script src="js/NavMenu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
