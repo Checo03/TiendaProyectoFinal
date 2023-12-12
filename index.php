@@ -225,15 +225,15 @@
                             <div class="Oferta">
                                 <div class="Img-Oferta">
                                     <div class="date">04 FEB</div>
-                                    <a href="#">
+                                    <a href="resultadoBusqueda.php?marca=Tercera">
                                         <img src="Media/Img/Inicio/oferta1.jpg" title="" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-info">
-                                    <h5 ><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                                    <h5 ><a href="resultadoBusqueda.php?marca=Tercera">AirPods Tercera Generacion</a></h5>
                                     <p></p>
                                     <div class="btn-bar">
-                                        <a href="#" class="px-btn-arrow">
+                                        <a href="resultadoBusqueda.php?marca=Tercera" class="px-btn-arrow">
                                             <span>Ver Oferta</span>
                                             <i class="arrow"></i>
                                         </a>
@@ -245,15 +245,15 @@
                             <div class="Oferta">
                                 <div class="Img-Oferta">
                                     <div class="date">04 FEB</div>
-                                    <a href="#">
+                                    <a href="resultadoBusqueda.php?marca=Tune">
                                         <img src="Media/Img/Inicio/oferta2.jpg" title="" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-info">
-                                    <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                                    <h5><a href="resultadoBusqueda.php?marca=Tune">JBL Tune 510BT</a></h5>
                                     <p></p>
                                     <div class="btn-bar">
-                                        <a href="#" class="px-btn-arrow">
+                                        <a href="resultadoBusqueda.php?marca=Tune" class="px-btn-arrow">
                                             <span>Ver Oferta</span>
                                             <i class="arrow"></i>
                                         </a>
