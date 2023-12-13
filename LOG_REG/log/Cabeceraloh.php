@@ -1,3 +1,30 @@
+<?php
+    $cantidadPro = 0; 
+
+    function obtenerNumeroCarrito($usuario) {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "audifonos";
+    
+        $conn = new mysqli($servername, $username, $password, $dbname);
+    
+        if ($conn->connect_error) {
+            die("Conexión fallida: " . $conn->connect_error);
+        }
+    
+        $sql = "SELECT COUNT(*) as cantidad FROM carrito WHERE usuario='$usuario'";
+        $result = $conn->query($sql);
+    
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return $row["cantidad"];
+        } else {
+            return 0;
+        }
+    }
+?>
+
 <header class="header">
     <nav class="navbar navbar-expand-lg fixed-top py-2">
         <div class="containerN">
@@ -36,6 +63,7 @@
                                 <div class="dropdown-menu">    
                                     <a class="dropdown-item" href="../../altasProductos.php">Altas</a>
                                     <a class="dropdown-item" href="../../adminProductos.php">Bajas</a>
+                                    <a class="dropdown-item" href="../../graficas.php">Graficas</a>
                                 </div>
                             </li>
                             <li class="nav-item" style="margin-right: 30px; margin-left:10px; margin-top: 5px;"><p style="color: #ffffff;"><?php echo $mensaje_bienvenida; ?></p></li>
@@ -58,6 +86,18 @@
                             <i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i>
                         </a>
                     </li>
+
+                    <?php
+                        if(isset($_SESSION['usuario_logueado'])){
+                            $cantidadPro = obtenerNumeroCarrito($_SESSION['usuario_logueado']); 
+                            ?> <!-- Numero Carrito -->
+                            <?php  // $cantidadPro = ($usuarioL); ?>
+                            <li class="nav-item">
+                                <div style="color: red; font: weight 700px; font-size: 18px;">
+                                    <?php echo $cantidadPro ?>
+                                </div>
+                            </li>
+                    <?php } ?>
 
                 </ul>
             </div>
