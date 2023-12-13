@@ -22,9 +22,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>
 </head>
-    <br><br>
 <body id="main-container">
-    
+
     <?php include ("Cabecera.php"); ?>
 
     <br><br><br>
@@ -97,9 +96,9 @@
     <br><br><br><br>
     <div class="contenedor-estiloAD">
         <center><section id="sectionAD">
-            <h2 id="h2AD">CONTÁCTANOS PARA MAYOR INFORMACIÓN</h2>
+            <h2 id="h2AD">CONOCE LAS DIVERSAS FORMAS DE PAGO CON LAS QUE CONTAMOS</h2>
             <br>
-            <center><a href="#" class="buttonAcercaD">CONTÁCTANOS </a> <i style="font-size: x-large;" class="fa-solid fa-arrow-pointer fa-beat"></i></center>
+            <center><a href="forma_pago.php" class="buttonAcercaD">FORMAS DE PAGO </a> <i style="font-size: x-large;" class="fa-solid fa-arrow-pointer fa-beat"></i></center>
         </section></center>
     </div>
     <br><br><br><br>

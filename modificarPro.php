@@ -23,6 +23,8 @@
 <body>
 
 <?php
+    include("Cabecera.php");
+
 $servidor = 'localhost';
 $cuenta = 'root';
 $password = '';
@@ -31,7 +33,7 @@ $bd = 'audifonos';
 $conexion = new mysqli($servidor, $cuenta, $password, $bd);
 
 if ($conexion->connect_errno) {
-    die('Error en la conexión');
+    die('Error en la conexion');
 }
 
 
@@ -61,8 +63,8 @@ if ($resultado->num_rows > 0) {
     echo 'No se encontro el producto solicitado.';
 }
     
-    include("Cabecera.php");
 ?>
+
       
 <br><br><br><br>
 <div class="container">

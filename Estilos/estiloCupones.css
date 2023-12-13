@@ -1,0 +1,114 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cupon-container {
+    background-color: black;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    max-width: 400px;
+    margin: auto;
+}
+#cupon-instagram{
+background-color: beige;
+}
+
+h3 {
+    color:black;
+    margin: 20px;
+    font-size: 26px;
+}
+
+p {
+    color: #666;
+    font-size: 20px;
+}
+
+.cupon-code {
+    font-size: 24px;
+    color: #007BFF;
+    margin-top: 10px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    align-content: center;
+}
+
+#formulario-suscripcion {
+ background-color: #005B41;
+ color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+   margin: auto;
+   align-content: center;
+}
+
+#formulario-suscripcion h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    color: beige;
+    font-weight: bold;
+}
+
+input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button {
+    background-color: black;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button:hover {
+    background-color: gray;
+}
+.instagram-link {
+    font-size: 100px;
+    background-color: beige;
+    color: rgb(12, 105, 67);
+
+    animation-name: colorChange;
+    animation-duration: 2s; 
+    animation-iteration-count: infinite; 
+}
+
+@keyframes colorChange {
+    0% {
+        color: rgb(12, 105, 67);
+    }
+    50% {
+        color: black; 
+    }
+    100% {
+        color: rgb(12, 105, 67);
+    }
+}

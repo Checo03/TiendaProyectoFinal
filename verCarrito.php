@@ -1,8 +1,7 @@
 <?php
-    session_start();
+session_start();
 
     include("ConfigBD/configSesion.php");
-    include("ConfigBD/configAudi.php");
 
 ?>
 <!DOCTYPE html>
@@ -11,18 +10,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Estilos/estilosCarrito.css"> 
-    <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/1d06ada3de.js" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>
-
-
-    <title>Carrito de Compras</title>
+    
+    <title>Revolt Sound Studio</title>
+    <?php include("ConfigBD/configCabecera.html"); ?>
     <style>
+
+        body{
+            background-color: beige;
+        }
 
         body .navbar{
             background: #005B41 !important;
@@ -66,13 +64,25 @@
     </style>
 </head>
 <body>
-        <?php include("Cabecera.php") ?>
-        
+
+        <?php include("Cabecera.php"); ?>
+
+<br> <br> <br> <br> <br>
 <div class="container recuadro">
     <h2 class="text-center mt-4 mb-4">Carrito de Compras</h2>
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "audifonos";
 
-$usuarioL=$_SESSION['usuario_logueado'];
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+if(isset($_SESSION['usuario_logueado'])) {
+    $usuarioL=$_SESSION['usuario_logueado'];
 
 //selecciona los productos y cuenta cuantas veces aparece cada nombre, las agrupa con el group by, segun el usuario que este logueado
 $sql = "SELECT nombre, descripcion, precioSD, precioF, imagen, COUNT(*) as cantidad FROM carrito WHERE usuario='$usuarioL' GROUP BY nombre";
@@ -83,6 +93,7 @@ $montoDescuento=0;
 $cantidadPro=0;
 $subTotalSD=0;
 $totalSub=0;
+//echo $sql;
 
     if ($result->num_rows > 0) {
         $totalPrecio = 0;
@@ -125,6 +136,7 @@ $totalSub=0;
                 <input type="hidden" name="precioSDA" value="'.$row["precioSD"].'">
                 <input type="hidden" name="precioFA" value="'.$row["precioF"].'">
                 <input type="hidden" name="imagenA" value="'.$row["imagen"].'">
+                <input type="hidden" name="usuarioA" value="'.$usuarioL.'">
                 <div id="quantity-selector">
                         <button type="button" onclick="decreaseQuantity(this)">-</button>
                         <input type="text" id="selectorAc" name="cantidadBorrarP" value="'.$row["cantidad"].'">
@@ -151,7 +163,7 @@ $totalSub=0;
         echo '<div class="d-flex justify-content-between mb-3">';
 
         echo '<div>';
-        echo '<h4>Subtotal:</h4>';
+        echo '<h4>Subtotal: ('.$cantidadPro.')</h4>';
         $subtotalTP= number_format($totalSub, 2, '.', ',');
         echo '<p class="total">' . $subtotalTP . '</p>';
         echo '</div>';
@@ -174,8 +186,9 @@ $totalSub=0;
         echo '</div>';
         
         echo '<div class="col-md-12 text-end">';
-         echo '<a href="detallesCompra.php?usuario=' . urlencode($usuarioL) . '&totalCompra=' .$totalPrecio.'" class="btn btn-success">Comprar</a>';
-         echo '</div>';
+        echo '<a href="detallesCompra.php?usuario=' . urlencode($usuarioL) . '&totalCompra=' .$totalPrecio. '&numProductos=' .$cantidadPro.'" class="btn btn-success me-2">Comprar</a>';
+        echo '<a href="productos.php" class="btn btn-warning">Regresar</a>';
+        echo '</div>';
     } else {
         echo '<script>
                 Swal.fire({
@@ -188,6 +201,22 @@ $totalSub=0;
                 });
               </script>';
     }
+
+} else {
+    echo '<script>
+    Swal.fire({
+        icon: "error",
+        title: "No puede ver el carrito alguien no logueado",
+        showConfirmButton: false,
+        timer: 2500
+    }).then(function () {
+        window.location.href = "productos.php";
+    });
+  </script>';
+
+
+}
+
     ?>
 
 </div>
@@ -208,14 +237,7 @@ function decreaseQuantity(button) {
 }
 
 </script>
-    
  
 
 </body>
 </html>
-
-<script src="js/NavMenu.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-

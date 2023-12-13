@@ -26,9 +26,7 @@
 
     <?php include("Cabecera.php"); ?>
 
-    <div class="Container-Inicio">
-          
-        <br><br><br><br>
+    <br><br><br><br>
     
 
         <section>

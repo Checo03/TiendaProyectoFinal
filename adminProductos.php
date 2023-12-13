@@ -29,9 +29,10 @@
     </style>
 </head>
 <body>
-        <?php include("Cabecera.php"); ?>
-             
 
+
+<?php include("Cabecera.php"); ?>
+             
 
 <?php
 $servidor='localhost';

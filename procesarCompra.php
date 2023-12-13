@@ -1,6 +1,7 @@
-<?php 
-session_start();
 
+<?php 
+    session_start();
+    include("ConfigBD/configSesion.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -8,11 +9,30 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Estilos/estilosProcesoB.css">
-    <title>Resumen de Compra</title>
-    
+    <title>Revolt Sound Studio</title>
+    <?php include("ConfigBD/configCabecera.html") ?>
+
+    <style>
+        body{
+            background-color: beige;
+        }
+
+        body .navbar{
+            background: #005B41 !important;
+        }
+
+    </style>
+
 </head>
 <body>
 <?php
+
+    include("Cabecera.php");
+
+    ?> 
+        <br> <br> <br> <br> <br>
+    <?php
+
 if (isset($_POST["usuario"]) && isset($_POST["precioSC"]) && isset($_POST["pais"])) {
     $usuarioL = $_POST["usuario"];
     $compraSI = $_POST["precioSC"];
@@ -34,6 +54,9 @@ if (isset($_POST["usuario"]) && isset($_POST["precioSC"]) && isset($_POST["pais"
     $band=0;
     $bandI=0;
     $bandE=0;
+    $impuestoE=0;
+    $envioE=0;
+    $montoE=0;
     
 
 
@@ -48,16 +71,19 @@ if (isset($_POST["usuario"]) && isset($_POST["precioSC"]) && isset($_POST["pais"
         $cupon3="D9CY41Z";  //500 de descuento
         if($cupon==$cupon1) {
             $compraSI=$compraSI-$desc1;
-            echo $compraSI;
+            //echo $compraSI;
             $band=1;
+            $montoE=$desc1;
         }
         else if($cupon==$cupon2) {
             $compraSI=$compraSI-$desc2;
             $band=2;
+            $montoE=$desc2;
         }
         else if($cupon==$cupon3) {
             $compraSI=$compraSI-$desc3;
             $band=3;
+            $montoE=$desc3;
         } else {
             echo '<p style="color: red; font-size: 16px; font-weight: bold;">Código del cupón incorrecto y/o caducado</p>';
         }
@@ -67,14 +93,17 @@ if (isset($_POST["usuario"]) && isset($_POST["precioSC"]) && isset($_POST["pais"
 
     if($paisE=="mexico") {
         $bandI=1;
+        $impuestoE=$im1;
         $compraSI=$compraSI+$im1;
         if($compraSI<=5500) {
             $compraSI=$compraSI+$mex1E;
             $bandE=1;
+            $envioE=$mex1E;
         }
         else if($compraSI>5500 && $compraSI<=9000) {
             $compraSI=$compraSI+$mex2E;
             $bandE=2;
+            $envioE=$mex2E;
         } else {
             $bandE=3;
             //echo "costo de envio gratis al tener un monto mayor a 6000";
@@ -82,14 +111,17 @@ if (isset($_POST["usuario"]) && isset($_POST["precioSC"]) && isset($_POST["pais"
 
     } else if($paisE=="americaL") {
         $bandI=2;
+        $impuestoE=$im2;
         $compraSI=$compraSI+$im2;
         if($compraSI<=5500) {
             $compraSI=$compraSI+$envF1;
             $bandE=4;
+            $envioE=$envF1;
         }
         else if($compraSI>5500 && $compraSI<=9000) {
             $compraSI=$compraSI+$envF2;
             $bandE=5;
+            $envioE=$envF2;
         } else {
             $bandE=3;
             //echo "costo de envio gratis al tener un monto mayor a 6000";
@@ -98,6 +130,7 @@ if (isset($_POST["usuario"]) && isset($_POST["precioSC"]) && isset($_POST["pais"
     } else {
         $bandI=3;
         $compraSI=$compraSI+$im3;
+        $impuestoE=$im3;
     }
 }
 ?>
@@ -161,9 +194,8 @@ if (isset($_POST["usuario"]) && isset($_POST["precioSC"]) && isset($_POST["pais"
         <div class="section total">
             <h2>Total a Pagar</h2>
             <p style="text-align:center">$<?php echo number_format($compraSI, 2); ?></p>
-            <?php if(isset($_SESSION["validarNota"])) {
-            echo '<center><a href="#?monto=<?php echo $compraSI; ?>" class="button">Opciones detalladas</a></center>';
-            } ?>
+  
+            
             <!-- formulario de envio 
             aqui pones el formulario de envio de ejemplo y ademas mandas las demas variables con los datos de los totales
              ej:
@@ -171,11 +203,56 @@ if (isset($_POST["usuario"]) && isset($_POST["precioSC"]) && isset($_POST["pais"
             -->
         </div>
     </div>
+    <div class="ticket-details">
+    <h2 class="mt-4 mb-4">Detalles para el envio</h2>
+    <form id="personalDetailsForm" action="finalizarCompra.php" method="post">
+        <label for="nombreCompleto">Nombre Completo:</label>
+        <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+        <br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+
+        <label for="direccion">Dirección:</label>
+        <textarea id="direccion" name="direccion" required></textarea>
+        <br>
+
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required>
+        <br>
+
+        <label for="pais">País:</label>
+        <input type="text" id="pais" name="pais" required>
+        <br>
+
+        <label for="codigoPostal">Codigo Postal:</label>
+        <input type="text" id="codigoPostal" name="codigoPostal" required>
+        <br>
+
+        <label for="telefono">Número Telefónico:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+        <br>
+        <input type="hidden" name="impuesto" value="<?php echo $impuestoE; ?>">
+        <input type="hidden" name="envioM" value="<?php echo $envioE; ?>">
+        <input type="hidden" name="subtotalSM" value="<?php echo $montoSC; ?>">
+        <input type="hidden" name="descuento" value="<?php echo $montoE; ?>">
+        <input type="hidden" name="total" value="<?php echo $compraSI; ?>">
+
+        <!-- Otros campos necesarios -->
+        
+        <!-- Elimina el evento onclick y permite que el formulario se envíe directamente -->
+        <button type="submit" id="comprarP" name="comprarP">Confirmar Compra</button>
+    </form>
+</div>
+
+
 </body>
 </html>
 
-
-
-
+<script src="js/NavMenu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 
 

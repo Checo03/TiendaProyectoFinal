@@ -93,7 +93,7 @@ if ($conn->query($sql) === TRUE) {
     Swal.fire({
         icon: "error",
         title: "Error al actualizar el producto",
-        text: "' . $conexion->error . '"
+        text: "' . $conn->error . '"
     });
   </script>';
     
