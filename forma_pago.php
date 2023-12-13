@@ -1,3 +1,10 @@
+<?php
+    session_start();
+
+    include("ConfigBD\configSesion.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,10 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formas de Pago</title>
     <link rel="stylesheet" href="Estilos/estilos_pago.css">
+    <?php include("ConfigBD\configCabecera.html"); ?>
 </head>
 <body>
-<?php include 'header.php'; ?>
-<img src="Media/Img/audio.jpeg" width="50" height="50" alt="" class="centered">
+    <?php include 'Cabecera.php'; ?>
+
+    <br> <br> <br> <br> <br>
+
 
 
  <center>

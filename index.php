@@ -264,15 +264,15 @@
                             <div class="Oferta">
                                 <div class="Img-Oferta">
                                     <div class="date">04 FEB</div>
-                                    <a href="#">
+                                    <a href="cupones.php">
                                         <img src="Media/Img/Inicio/oferta3.jpg" title="" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-info">
-                                    <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                                    <h5><a href="cupones.php">Revisa Nuestros Cupones</a></h5>
                                     <p></p>
                                     <div class="btn-bar">
-                                        <a href="#" class="px-btn-arrow">
+                                        <a href="cupones.php" class="px-btn-arrow">
                                             <span>Ver Oferta</span>
                                             <i class="arrow"></i>
                                         </a>
