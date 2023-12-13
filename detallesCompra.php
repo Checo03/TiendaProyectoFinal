@@ -104,7 +104,10 @@ if(isset($_GET["usuario"]) && isset($_GET["totalCompra"])) {
                     </div>
                     <div id="collapseT" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
-                        <input type="text" class="form-control" placeholder="Aqui pones el boton del Oxxo">
+                        <a href="pagoOxxo.php">
+                            <input type="text" class="form-control" placeholder="Pague En La Sucursal De Su Preferencia">
+                        </a>
+                        
                     </div>
                     </div>
                 </div>
