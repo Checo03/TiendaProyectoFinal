@@ -36,6 +36,7 @@
                                 <div class="dropdown-menu">    
                                     <a class="dropdown-item" href="../../altasProductos.php">Altas</a>
                                     <a class="dropdown-item" href="../../adminProductos.php">Bajas</a>
+                                    <a class="dropdown-item" href="../../graficas.php">Graficas</a>
                                 </div>
                             </li>
                             <li class="nav-item" style="margin-right: 30px; margin-left:10px; margin-top: 5px;"><p style="color: #ffffff;"><?php echo $mensaje_bienvenida; ?></p></li>
