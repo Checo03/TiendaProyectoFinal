@@ -1,4 +1,3 @@
-
 <?php
     session_start();
     include("ConfigBD/configSesion.php");
@@ -25,7 +24,10 @@
 </head>
 <body>
 <div class="Container-Inicio">
-       <?php include("Cabecera.php"); ?> 
+        
+        <?php include("Cabecera.php"); ?>
+
+
         <br><br><br><br>
     <?php
     $servername = "localhost";
@@ -61,7 +63,7 @@
     }
 
     $imagen =$fila["imagen"];
-    echo $_SESSION['usuario_logueado'];
+    //echo $_SESSION['usuario_logueado'];
 
     ?>
     <br>
@@ -175,6 +177,7 @@
             <p class="product-conect"><span class="leyenda">Conectividad:</span> <?php echo $fila["conectividad"]; ?></p>
             <p class="product-conect"><span class="leyenda">Cantidad:</span></p>
             <form id="cartForm" action="carrito.php" method="get">
+           
             <div id="quantity-selector">
                 <button type="button" onclick="decreaseQuantity()">-</button>
                 <input type="text" id="quantity" name="cantidadS" value="1" readonly>
@@ -204,18 +207,27 @@
             <i class="fa-solid fa-spinner fa-2xl"></i>
             </div>
             <br><br>
+            <?php if(isset($_SESSION["usuario_logueado"])) { 
+                $usuario=$_SESSION["usuario_logueado"];
+            } ?>
             <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
             <input type="hidden" name="precioFinal" value="<?php echo $precioFinal; ?>">
-            <?php
-            $usuario=$_SESSION['usuario_logueado'];
-            ?>
             <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
-            <div class="carritoShare">
-                <i class="fa-solid fa-cart-plus fa-2xl"></i>
-                <button type="submit" class="btn btn-primary btn-ver-detalles">Agregar al carrito</button>
-                <i class="fa-solid fa-share-nodes fa-2xl"></i>
-                <p>Compartir</p>
-            </div>
+            <?php if(isset($_SESSION["usuario_logueado"])) {
+                echo ' <div class="carritoShare">
+                    <i class="fa-solid fa-cart-plus fa-2xl"></i>
+                    <button type="submit" class="btn btn-primary btn-ver-detalles">Agregar al carrito</button>
+                    <i class="fa-solid fa-share-nodes fa-2xl"></i>
+                    <p>Compartir</p>
+                </div>';
+
+            } else {
+                echo '<div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 10px; margin-bottom: 15px;">';
+                echo '<p style="margin-bottom: 0;">Inicia sesión para agregar productos al carrito</p>';
+                echo '</div>';
+            }
+            ?>
+           
         </div>
         </form>
     </div>

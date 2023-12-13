@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,3 +109,4 @@ if (isset($_GET['nombreActP']) && isset($_GET['cantidadA'])  && isset($_GET['can
 
 
 ?>
+

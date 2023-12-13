@@ -25,6 +25,7 @@
 </head>
 <body>
 
+
         <?php include "Cabecera.php" ?>
 
         <br><br><br>
@@ -71,7 +72,13 @@ if(isset($_POST["categoriaF"])) {
             echo '<div class="row row-cols-1 row-cols-md-4 g-4">';
             while ($row = $resultE->fetch_assoc()) {
                 echo '<div class="col">';
-                echo '<div class="card producto-card" style="margin: 15px;">';
+                if($row["cantidad"]==0) {
+                    echo '<div class="card producto-card" style="margin: 15px; background-color: #f2f2f2; opacity:3.5;">';
+                }
+                else {
+                    echo '<div class="card producto-card" style="margin: 15px;">';
+                }
+                
                 echo '<img src="' . $row["imagen"] . '" class="card-img-top" alt="Producto">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $row["nombre"] . '</h5>';
@@ -79,15 +86,26 @@ if(isset($_POST["categoriaF"])) {
                 echo '<ul class="list-group list-group-flush">';
                 echo '<li class="list-group-item"><span class="etiqueta">Categoria: </span>' . $row["categoria"] . '</li>';
                 echo '<li class="list-group-item"><span class="etiqueta">Precio:</span> $' . $row["precio"] . '</li>';
-                if($row["descuento"]=="si") {
-                    echo '<li class="list-group-item"><span class="etiqueta">Aprovecha que este articulo cuenta con un descuento de: </span> ' . $row["montodesc"] . ' pesos</li>';
+                if ($row["cantidad"] == 0) {
+                    echo '<li class="list-group-item"><span class="etiqueta">Producto agotado</span></li>';
                 }
                 else {
-                    echo '<li class="list-group-item"><span class="etiqueta">Por el momento el producto no cuenta con descuento, mantente al pendiente</span></li>';
+                    if($row["descuento"]=="si") {
+                        echo '<li class="list-group-item"><span class="etiqueta">Aprovecha que este articulo cuenta con un descuento de: </span> ' . $row["montodesc"] . ' pesos</li>';
+                    }
+                    else {
+                        echo '<li class="list-group-item"><span class="etiqueta">Por el momento el producto no cuenta con descuento, mantente al pendiente</span></li>';
+                    }
                 }
                 echo '</ul>';
                 echo '<div class="card-body text-center">';
-                echo '<a href="detalleProducto.php?id=' . $row["id"] . '" class="btn btn-primary btn-ver-detalles">Ver mas</a>';
+                if ($row["cantidad"] == 0) {
+                    echo '<button class="btn btn-secondary" disabled>No disponible</button>';
+                }
+                else {
+                    echo '<a href="detalleProducto.php?id=' . $row["id"] . '" class="btn btn-primary btn-ver-detalles">Ver mas</a>';
+                }
+               
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -107,7 +125,13 @@ if(isset($_POST["categoriaF"])) {
             echo '<div class="row row-cols-1 row-cols-md-4 g-4">';
             while ($row = $resultD->fetch_assoc()) {
                 echo '<div class="col">';
-                echo '<div class="card producto-card" style="margin: 15px;">';
+                if($row["cantidad"]==0) {
+                    echo '<div class="card producto-card" style="margin: 15px; background-color: #f2f2f2; opacity:3.5;">';
+                }
+                else {
+                    echo '<div class="card producto-card" style="margin: 15px;">';
+                }
+                
                 echo '<img src="' . $row["imagen"] . '" class="card-img-top" alt="Producto">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $row["nombre"] . '</h5>';
@@ -115,15 +139,26 @@ if(isset($_POST["categoriaF"])) {
                 echo '<ul class="list-group list-group-flush">';
                 echo '<li class="list-group-item"><span class="etiqueta">Categoria: </span>' . $row["categoria"] . '</li>';
                 echo '<li class="list-group-item"><span class="etiqueta">Precio:</span> $' . $row["precio"] . '</li>';
-                if($row["descuento"]=="si") {
-                    echo '<li class="list-group-item"><span class="etiqueta">Aprovecha que este articulo cuenta con un descuento de: </span> ' . $row["montodesc"] . ' pesos</li>';
+                if ($row["cantidad"] == 0) {
+                    echo '<li class="list-group-item"><span class="etiqueta">Producto agotado</span></li>';
                 }
                 else {
-                    echo '<li class="list-group-item"><span class="etiqueta">Por el momento el producto no cuenta con descuento, mantente al pendiente</span></li>';
+                    if($row["descuento"]=="si") {
+                        echo '<li class="list-group-item"><span class="etiqueta">Aprovecha que este articulo cuenta con un descuento de: </span> ' . $row["montodesc"] . ' pesos</li>';
+                    }
+                    else {
+                        echo '<li class="list-group-item"><span class="etiqueta">Por el momento el producto no cuenta con descuento, mantente al pendiente</span></li>';
+                    }
                 }
                 echo '</ul>';
                 echo '<div class="card-body text-center">';
-                echo '<a href="detalleProducto.php?id=' . $row["id"] . '" class="btn btn-primary btn-ver-detalles">Ver mas</a>';
+                if ($row["cantidad"] == 0) {
+                    echo '<button class="btn btn-secondary" disabled>No disponible</button>';
+                }
+                else {
+                    echo '<a href="detalleProducto.php?id=' . $row["id"] . '" class="btn btn-primary btn-ver-detalles">Ver mas</a>';
+                }
+               
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -142,7 +177,13 @@ if(isset($_POST["categoriaF"])) {
             echo '<div class="row row-cols-1 row-cols-md-4 g-4">';
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="col">';
-                echo '<div class="card producto-card" style="margin: 15px;">';
+                if($row["cantidad"]==0) {
+                    echo '<div class="card producto-card" style="margin: 15px; background-color: #f2f2f2; opacity:3.5;">';
+                }
+                else {
+                    echo '<div class="card producto-card" style="margin: 15px;">';
+                }
+                
                 echo '<img src="' . $row["imagen"] . '" class="card-img-top" alt="Producto">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $row["nombre"] . '</h5>';
@@ -150,15 +191,26 @@ if(isset($_POST["categoriaF"])) {
                 echo '<ul class="list-group list-group-flush">';
                 echo '<li class="list-group-item"><span class="etiqueta">Categoria: </span>' . $row["categoria"] . '</li>';
                 echo '<li class="list-group-item"><span class="etiqueta">Precio:</span> $' . $row["precio"] . '</li>';
-                if($row["descuento"]=="si") {
-                    echo '<li class="list-group-item"><span class="etiqueta">Aprovecha que este articulo cuenta con un descuento de: </span> ' . $row["montodesc"] . ' pesos</li>';
+                if ($row["cantidad"] == 0) {
+                    echo '<li class="list-group-item"><span class="etiqueta">Producto agotado</span></li>';
                 }
                 else {
-                    echo '<li class="list-group-item"><span class="etiqueta">Por el momento el producto no cuenta con descuento, mantente al pendiente</span></li>';
+                    if($row["descuento"]=="si") {
+                        echo '<li class="list-group-item"><span class="etiqueta">Aprovecha que este articulo cuenta con un descuento de: </span> ' . $row["montodesc"] . ' pesos</li>';
+                    }
+                    else {
+                        echo '<li class="list-group-item"><span class="etiqueta">Por el momento el producto no cuenta con descuento, mantente al pendiente</span></li>';
+                    }
                 }
                 echo '</ul>';
                 echo '<div class="card-body text-center">';
-                echo '<a href="detalleProducto.php?id=' . $row["id"] . '" class="btn btn-primary btn-ver-detalles">Ver mas</a>';
+                if ($row["cantidad"] == 0) {
+                    echo '<button class="btn btn-secondary" disabled>No disponible</button>';
+                }
+                else {
+                    echo '<a href="detalleProducto.php?id=' . $row["id"] . '" class="btn btn-primary btn-ver-detalles">Ver mas</a>';
+                }
+               
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -177,7 +229,13 @@ if(isset($_POST["categoriaF"])) {
         echo '<div class="row row-cols-1 row-cols-md-4 g-4">';
         while ($row = $result->fetch_assoc()) {
             echo '<div class="col">';
-            echo '<div class="card producto-card" style="margin: 15px;">';
+            if($row["cantidad"]==0) {
+                echo '<div class="card producto-card" style="margin: 15px; background-color: #f2f2f2; opacity:3.5;">';
+            }
+            else {
+                echo '<div class="card producto-card" style="margin: 15px;">';
+            }
+            
             echo '<img src="' . $row["imagen"] . '" class="card-img-top" alt="Producto">';
             echo '<div class="card-body">';
             echo '<h5 class="card-title">' . $row["nombre"] . '</h5>';
@@ -185,15 +243,26 @@ if(isset($_POST["categoriaF"])) {
             echo '<ul class="list-group list-group-flush">';
             echo '<li class="list-group-item"><span class="etiqueta">Categoria: </span>' . $row["categoria"] . '</li>';
             echo '<li class="list-group-item"><span class="etiqueta">Precio:</span> $' . $row["precio"] . '</li>';
-            if($row["descuento"]=="si") {
-                echo '<li class="list-group-item"><span class="etiqueta">Aprovecha que este articulo cuenta con un descuento de: </span> ' . $row["montodesc"] . ' pesos</li>';
+            if ($row["cantidad"] == 0) {
+                echo '<li class="list-group-item"><span class="etiqueta">Producto agotado</span></li>';
             }
             else {
-                echo '<li class="list-group-item"><span class="etiqueta">Por el momento el producto no cuenta con descuento, mantente al pendiente</span></li>';
+                if($row["descuento"]=="si") {
+                    echo '<li class="list-group-item"><span class="etiqueta">Aprovecha que este articulo cuenta con un descuento de: </span> ' . $row["montodesc"] . ' pesos</li>';
+                }
+                else {
+                    echo '<li class="list-group-item"><span class="etiqueta">Por el momento el producto no cuenta con descuento, mantente al pendiente</span></li>';
+                }
             }
             echo '</ul>';
             echo '<div class="card-body text-center">';
-            echo '<a href="detalleProducto.php?id=' . $row["id"] . '" class="btn btn-primary btn-ver-detalles">Ver mas</a>';
+            if ($row["cantidad"] == 0) {
+                echo '<button class="btn btn-secondary" disabled>No disponible</button>';
+            }
+            else {
+                echo '<a href="detalleProducto.php?id=' . $row["id"] . '" class="btn btn-primary btn-ver-detalles">Ver mas</a>';
+            }
+           
             echo '</div>';
             echo '</div>';
             echo '</div>';
@@ -229,41 +298,7 @@ $conn->close();
 </div>
 <br>
 
-<div class="Container-Footer">
-            <footer>
-                    <div class="footer-content">
-                        <div class="contact-info">
-                            <h2>Información de Contacto</h2>
-                            <p><i class="fas fa-map-marker-alt"></i> Dirección: Aguascalientes MX</p>
-                            <p><i class="fas fa-phone"></i> Teléfono: +449-584-4979</p>
-                            <p><i class="fas fa-envelope"></i> Correo Electrónico: revoltstudio@empresa.com</p>
-                        </div>
-                        <div class="social-links">
-                            <h2>Síguenos en Redes Sociales</h2>
-                            <div class="icon-container">
-                                <span class="separator">|</span>
-                                <a href="https://www.facebook.com/emi.harrera"><i class="fab fa-facebook-f fa-lg"></i></a>
-                                <span class="separator">|</span>
-                                <a href="https://twitter.com/emiiherrerra_10"><i class="fab fa-twitter fa-lg"></i></a>
-                                <span class="separator">|</span>
-                                <a href="https://www.instagram.com/e.jherrera.10/"><i class="fab fa-instagram fa-lg"></i></a>
-                                <span class="separator">|</span>
-                                <a href="https://www.youtube.com"><i class="fab fa-youtube fa-lg"></i></a>
-                                <span class="separator">|</span>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="copyright">
-                        &copy; 2023 REVOLT-STUDIO| Todos los derechos reservados.
-                    </div>
-                    <div class="empresa2">
-                        <img src="Media/Img/logo_final.png" width="100"  alt="">
-                    </div>
-            </footer>
-        </div>
+<?php include("footer.php"); ?>
 
 
 

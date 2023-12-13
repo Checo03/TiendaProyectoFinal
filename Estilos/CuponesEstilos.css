@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+}
+
+body .navbar{
+    background: #005B41 !important;
+}
+
+.container-cupones {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+.discount-text {
+    font-size: 1.5em;
+    color: #e44d26; /* Color naranja */
+    font-weight: bold;
+}
+
+.cupon-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#cupon-instagram {
+    margin-top: 30px;
+}
+
+.instagram-link {
+    text-decoration: none;
+    color: #405de6; /* Color azul de Instagram */
+    display: block;
+    margin-top: 10px;
+}
+
+.instagram-link i {
+    margin-right: 5px;
+}
+
+#formulario-suscripcion {
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50; /* Color verde */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.success-message {
+    margin-top: 20px;
+}

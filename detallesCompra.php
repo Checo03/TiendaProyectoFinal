@@ -254,3 +254,4 @@ if(isset($_GET["usuario"]) && isset($_GET["totalCompra"])) {
 
 </body>
 </html>
+
