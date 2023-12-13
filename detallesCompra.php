@@ -250,6 +250,7 @@ if(isset($_GET["usuario"]) && isset($_GET["totalCompra"])) {
         </div>
     </div>
 </div>
+<?php include("footer.php"); ?>
 
 
 </body>
