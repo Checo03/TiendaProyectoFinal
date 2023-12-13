@@ -1,16 +1,7 @@
 <?php
     session_start();
    
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "proy";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
+    include 'ConfigBD/configSesion.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,98 +11,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revolt Sound Studios</title>
     <link rel="shortcut icon" href="Media/Img/Favicon/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link rel="stylesheet" href="Estilos/InicioEstiloss.css">
     <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
 
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/91b95836a0.js" crossorigin="anonymous"></script>
+    <?php include("ConfigBD/configCabecera.html"); ?>
 
 </head>
 <body>
     <div class="Container-Inicio">
-        <header class="header">
-            <nav class="navbar navbar-expand-lg fixed-top py-2">
-                <div class="containerN">
-                    <a href="index.php" class="navbar-brand"><img src="Media/Img/logo_final.png" alt="LOGO" style="width: 70px;  height: 60px;"></a>
-                    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
-                    
-                    <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                        <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-                            <li class="nav-item dropdown" style="margin-right: 10px;">
-                                <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
-                                <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="productos.php">Tienda</a>
-                                    <!--Lista De Marcas -->
-                                </div>
-                            </li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="ayuda.php" class="nav-link text-uppercase font-weight-bold">Ayuda</a></li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="acerca_de.php" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
 
-                            <form style="margin-left: 80px;" class="d-flex" action="">
-                                <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
-                                <button class="btn btn-outline-success" type="submit">Buscar</button>
-                            </form>
+        <?php include "Cabecera.php" ?>
 
-                            <?php
-                                if (isset($_SESSION['usuario_logueado'])) {
-                                    $usuario_logueado = $_SESSION['usuario_logueado'];
-                            ?>
-                            <?php 
-                               $stmt = $conn->prepare("SELECT admin FROM usuarios WHERE cuenta = ?");
-                               $stmt->bind_param("s", $usuario_logueado);
-                               $stmt->execute();
-                               $result_admin = $stmt->get_result();
-                           
-                               // Verificar si la consulta fue exitosa
-                               if ($result_admin === false) {
-                                   die("Error de consulta: " . $conn->error);
-                               }
-                           
-                               // Obtener el valor de admin
-                               $row_admin = $result_admin->fetch_assoc();
-                               $admin_value = $row_admin['admin'];
-                           
-                               // Verificar si admin es igual a 0
-                               if ($admin_value == 0) {
-                                   $mensaje_bienvenida = "Bienvenido Usuario, $usuario_logueado!";
-                               } else {
-                                   $mensaje_bienvenida = "Bienvenido Administrador, $usuario_logueado!";
-                                   // Resto del código para administradores
-                           ?>
-                                   <p><?php echo $mensaje_bienvenida; ?></p>
-                                   <li class="nav-item dropdown" style="margin-right: 10px;">
-                                       <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
-                                       <div class="dropdown-menu">    
-                                       <a class="dropdown-item" href="altasProductos.php">Altas</a>
-                                           <a class="dropdown-item" href="adminProductos.php">Bajas y cambios</a>
-                                       </div>
-                                   </li>
-                           <?php
-                                }
-
-                            ?>
-                             <li class="nav-item" style="margin-right: 5px;"><a href="Log_REG/log/cerrar_sesion.php" class="btn btn-outline-primary">Cerrar Sesion</a></li>
-    
-<?php  } else {
-    // Si el usuario no está logeado, redirigir a la página de inicio de sesión
-    ?><li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="LOG_REG/log/log.php" class="btn btn-outline-primary">Login</a></li>
-    <li class="nav-item" style="margin-right: 5px;"><a href="LOG_REG/registro.html" class="btn btn-outline-primary">Registrarse</a></li>
-  <?php  
-    
-}$conn->close();
-?>                        
-
-                            <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>       
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-        </header>      
 
         <main>
             <div class="Img-Banner">
@@ -121,7 +31,9 @@
                         <h1>Revolt Sound Studios</h1>
                         <p>Siente la calidad en cada nota</p>
                         <br><br>
-                        <button>VER MAS</button>
+                        <form action="productos.php">
+                            <button>VER MAS</button>
+                        </form>
                     </div>
                 </div>
             </div> 
@@ -135,18 +47,18 @@
                     <ul>
                         <li>
                             <div class="image_title">
-                                <a href="#">Audífonos Gamer Inalámbricos - Blancos</a>
+                                <a href="resultadoBusqueda.php?marca=Tune">Audifonos JBL Tune - Blancos</a>
                             </div>
-                            <a href="#">
-                                <img style="height: 400px; width: 685px;" src="Media/Img/Contactanos/promos/audif.jpg"/>
+                            <a href="resultadoBusqueda.php?marca=Tune">
+                                <img style="height: 400px; width: 685px;" src="Media/Img/Contactanos/promos/JBLTune.jpg"/>
                             </a>
                         </li>
                         <li>
                             <div class="image_title">
-                                <a href="#">Audífonos Gamer Inalámbricos - Morados</a>
+                                <a href="resultadoBusqueda.php?marca=Tercera">AirPods Tercera Generacion</a>
                             </div>
-                            <a href="#">
-                                <img style="height: 400px; width: 890px;" src="Media/Img/Contactanos/promos/audiff2.jpeg">
+                            <a href="resultadoBusqueda.php?marca=Tercera">
+                                <img style="height: 400px; width: 890px;" src="Media/Img/Contactanos/promos/AirPodsPromo.jpg">
                             </a>
                         </li>
                         <li>
@@ -184,20 +96,19 @@
                 </div>
                 <div class="Categorias" style="margin-bottom: 50px;">
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Apple">
                             <img src="Media/Img/Inicio/apple_marca2.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Apple</div>
-
                         </a>
                     </div>
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=JBL">
                             <img src="Media/Img/Inicio/jbl_marca.jpg" class="Img-Cat">
                             <div class="Text-Categoria">JBL</div>
                         </a>
                     </div>
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Sony">
                             <img src="Media/Img/Inicio/sony_marca.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Sony</div>
                         </a>
@@ -205,20 +116,20 @@
                 </div>
                 <div class="Categorias">
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Bose">
                             <img src="Media/Img/Inicio/bose_marcas.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Bose</div>
 
                         </a>
                     </div>
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Sennheiser">
                             <img src="Media/Img/Inicio/sennheiser_marca.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Sennheiser</div>
                         </a>
                     </div>
                     <div class="Categoria-Foto">
-                        <a href="#">
+                        <a href="resultadoBusqueda.php?marca=Huawei">
                             <img src="Media/Img/Inicio/huawei_marca.jpg" class="Img-Cat">
                             <div class="Text-Categoria">Huawei</div>
                         </a>
@@ -313,15 +224,15 @@
                             <div class="Oferta">
                                 <div class="Img-Oferta">
                                     <div class="date">04 FEB</div>
-                                    <a href="#">
+                                    <a href="resultadoBusqueda.php?marca=Tercera">
                                         <img src="Media/Img/Inicio/oferta1.jpg" title="" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-info">
-                                    <h5 ><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                                    <h5 ><a href="resultadoBusqueda.php?marca=Tercera">AirPods Tercera Generacion</a></h5>
                                     <p></p>
                                     <div class="btn-bar">
-                                        <a href="#" class="px-btn-arrow">
+                                        <a href="resultadoBusqueda.php?marca=Tercera" class="px-btn-arrow">
                                             <span>Ver Oferta</span>
                                             <i class="arrow"></i>
                                         </a>
@@ -333,15 +244,15 @@
                             <div class="Oferta">
                                 <div class="Img-Oferta">
                                     <div class="date">04 FEB</div>
-                                    <a href="#">
+                                    <a href="resultadoBusqueda.php?marca=Tune">
                                         <img src="Media/Img/Inicio/oferta2.jpg" title="" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-info">
-                                    <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
+                                    <h5><a href="resultadoBusqueda.php?marca=Tune">JBL Tune 510BT</a></h5>
                                     <p></p>
                                     <div class="btn-bar">
-                                        <a href="#" class="px-btn-arrow">
+                                        <a href="resultadoBusqueda.php?marca=Tune" class="px-btn-arrow">
                                             <span>Ver Oferta</span>
                                             <i class="arrow"></i>
                                         </a>
@@ -386,7 +297,7 @@
                         <div class="social-links">
                             <h2>Síguenos en Redes Sociales</h2>
                             <div class="icon-container">
-                                <span class="separator">|</span>
+                                <Espan class="separator">|</span>
                                 <a href="https://www.facebook.com/emi.harrera"><i class="fab fa-facebook-f fa-lg"></i></a>
                                 <span class="separator">|</span>
                                 <a href="https://twitter.com/emiiherrerra_10"><i class="fab fa-twitter fa-lg"></i></a>
@@ -418,5 +329,16 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
- 
+    
+
+    <!-- Actualiar Carrito -->
+    
+    
 </body>
+
+</html>
+
+<script src="js/NavMenu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>

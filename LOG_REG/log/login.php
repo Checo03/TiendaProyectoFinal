@@ -74,7 +74,7 @@ if ($result->num_rows > 0) {
         confirmButtonText: 'Recuperar'
         }).then(() => {
         console.log('Redirigiendo a recuperacion de contraseña');
-        window.location.href = 'recover_password.html';
+        window.location.href = 'recoverPassword.php';
     });
 });
 </script>

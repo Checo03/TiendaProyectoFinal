@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+       #formas .container{
+
+        height: 100vh;
+       }
+
+       #formas .card{
+
+        border: none;
+       }
+
+       #formas .card-header {
+            padding: .5rem 1rem;
+            margin-bottom: 0;
+            background-color: rgba(0,0,0,.03);
+            border-bottom: none;
+        }
+
+        #formas .btn-light:focus {
+            color: #212529;
+            background-color: #e2e6ea;
+            border-color: #dae0e5;
+            box-shadow: 0 0 0 0.2rem rgba(216,217,219,.5);
+        }
+
+        #formas .form-control{
+
+          height: 50px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    font-size: 14px;
+        }
+
+        #formas .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #039be5;
+    outline: 0;
+    box-shadow: none;
+
+    }
+
+    #formas .input{
+
+      position: relative;
+    }
+
+    #formas .input i{
+
+          position: absolute;
+    top: 17px;
+    left: 11px;
+    color: #989898;
+    }
+
+    #formas .input input{
+
+      text-indent: 25px;
+    }
+
+    #formas .card-text{
+
+      font-size: 13px;
+    margin-left: 6px;
+    }
+
+    #formas .certificate-text{
+
+      font-size: 12px;
+    }
+
+       
+    #formas .billing{
+      font-size: 11px;
+    }  
+
+    #formas .super-price{
+
+          top: 0px;
+    font-size: 22px;
+    }
+
+    #formas .super-month{
+
+          font-size: 11px;
+    }
+
+
+    #formas .line{
+      color: #bfbdbd;
+    }
+
+    #formas .free-button{
+
+          background: #1565c0;
+    height: 52px;
+    font-size: 15px;
+    border-radius: 8px;
+    }
+
+
+    #formas .payment-card-body{
+
+    flex: 1 1 auto;
+    padding: 24px 1rem !important;
+
+    }

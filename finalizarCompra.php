@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 ?>
@@ -132,7 +133,4 @@ if (isset($_POST['comprarP'])) {
 ?>
 </body>
 </html>
-
-
-
 

@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+    include("ConfigBD/configSesion.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +13,18 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/1d06ada3de.js" crossorigin="anonymous"></script>
-    <title>Carrito de Compras</title>
+    <title>Revolt Sound Studio</title>
+    <?php include("ConfigBD/configCabecera.html"); ?>
     <style>
+
+        body{
+            background-color: beige;
+        }
+
+        body .navbar{
+            background: #005B41 !important;
+        }
+
         .producto-row {
             margin-bottom: 20px;
         }
@@ -52,6 +64,9 @@ session_start();
 </head>
 <body>
 
+        <?php include("Cabecera.php"); ?>
+
+<br> <br> <br> <br> <br>
 <div class="container recuadro">
     <h2 class="text-center mt-4 mb-4">Carrito de Compras</h2>
 <?php
@@ -225,4 +240,3 @@ function decreaseQuantity(button) {
 
 </body>
 </html>
-
