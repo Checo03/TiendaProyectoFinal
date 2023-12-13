@@ -279,3 +279,17 @@ margin-top:25px;
 .breadcrumb-link:hover {
     color: #2980b9;
 }
+#quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  button {
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  #quantity {
+    width: 60px;
+    text-align: center;
+  }

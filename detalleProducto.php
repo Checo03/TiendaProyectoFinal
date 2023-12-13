@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +15,7 @@
     <link rel="stylesheet" href="Estilos/CabeceraEstilos.css">
     <link rel="stylesheet" href="Estilos/PiePaginaEstilos.css">
     
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -30,14 +35,12 @@
                             <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="#">Ver Todo</a>
-                                    <a class="dropdown-item" href="#">Diademas</a>
-                                    <a class="dropdown-item" href="#">EarBuds</a>
+                                    <a class="dropdown-item" href="productos.php">Tienda</a>
                                     <!--Lista De Marcas -->
                                 </div>
                             </li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="ayuda.php" class="nav-link text-uppercase font-weight-bold">Ayuda</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="acerca_de.php" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
                             <!-- Menu Admin 
                             <li class="nav-item dropdown" style="margin-right: 10px;">
@@ -52,7 +55,7 @@
                                 <input class="form-control mr-2" type="search" placeholder="¿Qué estas buscando?" aria-label="¿Qué estas buscando?">
                                 <button class="btn btn-outline-success" type="submit">Buscar</button>
                             </form>
-                            <li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="#" class="btn btn-outline-primary">Login</a></li>
+                            <li class="nav-item" style="margin-right: 5px; margin-left: 30px;"><a href="LOG_REG/log/log.php" class="btn btn-outline-primary">Login</a></li>
                             <li class="nav-item" style="margin-right: 5px;"><a href="#" class="btn btn-outline-primary">Registrarse</a></li>
                             <li class="nav-item" style="margin-left: 20px;"><a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 24px;"></i></a></li>       
                         </ul>
@@ -95,6 +98,7 @@
     }
 
     $imagen =$fila["imagen"];
+    //echo $_SESSION['usuario_logueado'];
 
     ?>
     <br>
@@ -190,11 +194,11 @@
             ?>
             <p class="product-info"><span class="leyenda">Id del producto:</span> <?php echo $fila["id"]; ?></p>
             <p class="product-marca"><span class="leyenda">Marca: </span><?php echo $fila["marca"]; ?></p>
+            <?php $precioFinal=$fila["precio"]-$fila["montodesc"]; ?>
             <?php if ($fila["descuento"] == "si") { ?>
                 <div class="contenedorPrecio">
                 <p class="product-info priceTachado"><del>$<?php echo $fila["precio"]; ?></del></p>
                 <?php
-                $precioFinal=$fila["precio"]-$fila["montodesc"];
                 ?>
                 <p class="product-info discount">$<?php echo $precioFinal ?></p>
                 </div>
@@ -206,6 +210,15 @@
             <p class="product-info"><span class="leyenda">Disponibilidad en tienda: </span><?php echo $fila["cantidad"]; ?> piezas</p>
             <p class="product-info"><span class="leyenda">Color: </span><?php echo $fila["color"]; ?></p>
             <p class="product-conect"><span class="leyenda">Conectividad:</span> <?php echo $fila["conectividad"]; ?></p>
+            <p class="product-conect"><span class="leyenda">Cantidad:</span></p>
+            <form id="cartForm" action="carrito.php" method="get">
+           
+            <div id="quantity-selector">
+                <button type="button" onclick="decreaseQuantity()">-</button>
+                <input type="text" id="quantity" name="cantidadS" value="1" readonly>
+                <button type="button" onclick="increaseQuantity()">+</button>
+            </div>
+           
             <hr class="lineaDivision">
             <b><p class="product-desc">Descripcion: </p></b>
             <p class="product-desc"><?php echo $fila["descripcion"]; ?></p>
@@ -229,11 +242,29 @@
             <i class="fa-solid fa-spinner fa-2xl"></i>
             </div>
             <br><br>
-            <div class="carritoShare">
-            <i class="fa-solid fa-cart-plus fa-2xl"></i><p><a href="#">Agregar al carrito</a></p>
-            <i class="fa-solid fa-share-nodes fa-2xl"></i><p>Compartir</p>
-            </div>
+            <?php if(isset($_SESSION["usuario_logueado"])) { 
+                $usuario=$_SESSION["usuario_logueado"];
+            } ?>
+            <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
+            <input type="hidden" name="precioFinal" value="<?php echo $precioFinal; ?>">
+            <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
+            <?php if(isset($_SESSION["usuario_logueado"])) {
+                echo ' <div class="carritoShare">
+                    <i class="fa-solid fa-cart-plus fa-2xl"></i>
+                    <button type="submit" class="btn btn-primary btn-ver-detalles">Agregar al carrito</button>
+                    <i class="fa-solid fa-share-nodes fa-2xl"></i>
+                    <p>Compartir</p>
+                </div>';
+
+            } else {
+                echo '<div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 10px; margin-bottom: 15px;">';
+                echo '<p style="margin-bottom: 0;">Inicia sesión para agregar productos al carrito</p>';
+                echo '</div>';
+            }
+            ?>
+           
         </div>
+        </form>
     </div>
     <div class="comments-section">
         <h3>Comentarios</h3>
@@ -371,6 +402,20 @@
     function cambiarImagen(nuevaImagen) {
         document.getElementById('zoomify-image').src = nuevaImagen;
         
+    }
+    function increaseQuantity() {
+      var quantityInput = document.getElementById('quantity');
+      var currentQuantity = parseInt(quantityInput.value, 10);
+      quantityInput.value = currentQuantity + 1;
+    }
+
+    function decreaseQuantity() {
+      var quantityInput = document.getElementById('quantity');
+      var currentQuantity = parseInt(quantityInput.value, 10);
+      
+      if (currentQuantity > 1) {
+        quantityInput.value = currentQuantity - 1;
+      }
     }
 </script>
 <script src="js/NavMenu.js"></script>

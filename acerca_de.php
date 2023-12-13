@@ -45,14 +45,12 @@
                             <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="productos.php">Ver Todo</a>
-                                    <a class="dropdown-item" href="#">Diademas</a>
-                                    <a class="dropdown-item" href="#">EarBuds</a>
+                                    <a class="dropdown-item" href="productos.php">Tienda</a>
                                     <!--Lista De Marcas -->
                                 </div>
                             </li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Conocenos</a></li>
-                            <li class="nav-item" style="margin-right: 10px;"><a href="#" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="ayuda.php" class="nav-link text-uppercase font-weight-bold">Ayuda</a></li>
+                            <li class="nav-item" style="margin-right: 10px;"><a href="acerca_de.php" class="nav-link text-uppercase font-weight-bold">Acerca De</a></li>
                             <li class="nav-item" style="margin-right: 10px;"><a href="contactanos.php" class="nav-link text-uppercase font-weight-bold">Contactanos</a></li>
 
                             <form style="margin-left: 80px;" class="d-flex" action="">
@@ -89,9 +87,8 @@
                                    <li class="nav-item dropdown" style="margin-right: 10px;">
                                        <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
                                        <div class="dropdown-menu">    
-                                           <a class="dropdown-item" href="#">Altas</a>
-                                           <a class="dropdown-item" href="#">Bajas</a>
-                                           <a class="dropdown-item" href="#">Cambios</a>
+                                       <a class="dropdown-item" href="altasProductos.php">Altas</a>
+                                           <a class="dropdown-item" href="adminProductos.php">Bajas y cambios</a>
                                        </div>
                                    </li>
                            <?php
@@ -189,9 +186,9 @@ $conn->close();
     <br><br><br><br>
     <div class="contenedor-estiloAD">
         <center><section id="sectionAD">
-            <h2 id="h2AD">CONTÁCTANOS PARA MAYOR INFORMACIÓN</h2>
+            <h2 id="h2AD">CONOCE LAS DIVERSAS FORMAS DE PAGO CON LAS QUE CONTAMOS</h2>
             <br>
-            <center><a href="#" class="buttonAcercaD">CONTÁCTANOS </a> <i style="font-size: x-large;" class="fa-solid fa-arrow-pointer fa-beat"></i></center>
+            <center><a href="forma_pago.php" class="buttonAcercaD">FORMAS DE PAGO </a> <i style="font-size: x-large;" class="fa-solid fa-arrow-pointer fa-beat"></i></center>
         </section></center>
     </div>
     <br><br><br><br>

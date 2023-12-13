@@ -43,9 +43,7 @@
                             <li class="nav-item dropdown" style="margin-right: 10px;">
                                 <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
                                 <div class="dropdown-menu">    
-                                    <a class="dropdown-item" href="productos.php">Ver Todo</a>
-                                    <a class="dropdown-item" href="#">Diademas</a>
-                                    <a class="dropdown-item" href="#">EarBuds</a>
+                                    <a class="dropdown-item" href="productos.php">Tienda</a>
                                     <!--Lista De Marcas -->
                                 </div>
                             </li>
@@ -89,7 +87,7 @@
                                        <button type="button" class="nav-link text-uppercase font-weight-bold custom-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</button>
                                        <div class="dropdown-menu">    
                                        <a class="dropdown-item" href="altasProductos.php">Altas</a>
-                                           <a class="dropdown-item" href="adminProductos.php">Bajas</a>
+                                           <a class="dropdown-item" href="adminProductos.php">Bajas y cambios</a>
                                        </div>
                                    </li>
                            <?php
